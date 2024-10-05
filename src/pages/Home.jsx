@@ -1,7 +1,10 @@
 ﻿import TitleBar from "../Components/TitleBar";
 import PortfolioList from "../Components/PortfolioList";
+import {GetAllGamesFromTable} from "../Postgress/Database";
 
 export default function Home() {
+    GetAllGamesFromTable();
+
     return (
         <div>
             <TitleBar />
