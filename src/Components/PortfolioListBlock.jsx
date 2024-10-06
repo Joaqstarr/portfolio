@@ -1,4 +1,7 @@
-﻿export default function PortfolioListBlock() {
+﻿export default function PortfolioListBlock(params) {
+    let name = params.project.name;
+    let tags = params.project.tags;
+    let extraInfo = params.project.extrainfo;
 
     let imagePath = "https://149455152.v2.pressablecdn.com/wp-content/uploads/2017/03/botw-featured.jpg";
     return (
@@ -11,15 +14,17 @@
         }}>
             <div className="flex flex-col justify-end w-fit  p-4">
                 <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold">
-                    Game Name
+                    {name}
                 </p>
                 <div className="flex flex-row">
-                    <Tag name="C#"/>
+                    {tags.map((tag, index)=>(
+                    <Tag name={tag}/>
+                ))};
                 </div>
             </div>
 
             <div className="flex flex-col p-4 justify-end sm:w-full lg:w-fit lg:opacity-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent to-slate-600/50 to-30% group-hover:opacity-100 ease-in duration-200">
-                <p className="text-slate-50">Info about the game here :DD.</p>
+                <p className="text-slate-50">{extraInfo}</p>
             </div>
         </div>
     )
