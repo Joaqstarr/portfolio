@@ -5,7 +5,7 @@
 
     let name = params.project.name;
     let tags = params.project.tags;
-    let extraInfo = params.project.extrainfo;
+    let extraInfo = params.project.extraInfo;
 
 
 

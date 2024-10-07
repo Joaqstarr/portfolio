@@ -1,5 +1,7 @@
 ﻿'use client'
 
+
+import {loadJSONFiles} from "./homeServer";
 import TitleBar from "../../Components/TitleBar";
 import PortfolioList from "../../Components/PortfolioList";
 import {GetAllProjectsFromTable} from "../../Postgress/Database";
@@ -13,7 +15,9 @@ export default function Home() {
     }, []);
 
     const  UpdateProjects = async () =>{
-        const table = await GetAllProjectsFromTable();
+        //const table = await GetAllProjectsFromTable();
+        const table = await loadJSONFiles('public/projects/');
+        console.log(JSON.stringify(table));
         setProjects(table)
     }
 
