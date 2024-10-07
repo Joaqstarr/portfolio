@@ -1,0 +1,18 @@
+﻿import Header from "./Header";
+import Paragraph from "./Paragraph";
+import Subtitle from "./Subtitle";
+import Image from "./Image";
+
+export default function Element(params){
+    switch (params.element.type){
+        case "head":
+            return (<Header element={params.element}/>);
+        case "paragraph":
+            return (<Paragraph element={params.element}/>);
+        case "image":
+            return (<Image element={params.element}/>);
+        case "subtitle":
+            return (<Subtitle element={params.element}/>);
+
+    }
+}
