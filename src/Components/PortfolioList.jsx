@@ -3,7 +3,9 @@ import PortfolioListRow from "./PortfolioListRow";
 import React, { useState } from 'react';
 
 export default function PortfolioList(params) {
-
+    const handleClick = (page) => {
+        window.location.href = 'projects/'+ConvertNameToUrlSafe(page);
+    }
     const groupedItems = params.projects.reduce((result, value, index, array) => {
         if (index % 2 === 0) {
             result.push(array.slice(index, index + 2));
@@ -16,10 +18,15 @@ export default function PortfolioList(params) {
             {groupedItems.map((pair, idx) => (
                 <PortfolioListRow key={idx}>
                     {pair.map((item, subIdx) => (
-                        <PortfolioListBlock key={subIdx} project={item}/>
+                        <PortfolioListBlock key={subIdx} project={item} click={handleClick}/>
                     ))}
                 </PortfolioListRow>
             ))}
         </div>
     )
+}
+
+function ConvertNameToUrlSafe(name){
+    let noSpace = name.replace(" ", "");
+    return noSpace.replace(":", "");
 }

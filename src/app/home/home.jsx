@@ -1,8 +1,8 @@
-﻿"use client"
+﻿'use client'
 
-import TitleBar from "../Components/TitleBar";
-import PortfolioList from "../Components/PortfolioList";
-import {GetAllProjectsFromTable} from "../Postgress/Database";
+import TitleBar from "../../Components/TitleBar";
+import PortfolioList from "../../Components/PortfolioList";
+import {GetAllProjectsFromTable} from "../../Postgress/Database";
 import {useState, useEffect } from "react";
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import React from "react";
 import Root from "./pages/root"
-import Home from "./pages/Home";
+import Home from "./app/home/page";
 
 const router = createBrowserRouter([
     {
@@ -11,12 +11,13 @@ const router = createBrowserRouter([
     {
         path: "/Home",
         element: <Home/>,
+
     },
 ]);
 
 function App() {
   return (
-    <div className="App">
+    <div className="App">fard
         <RouterProvider router={router}/>
 
 
