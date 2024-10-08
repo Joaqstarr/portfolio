@@ -9,6 +9,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/***/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/home/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/project/[slug]/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},

@@ -4,7 +4,6 @@
 import {loadJSONFiles} from "./homeServer";
 import TitleBar from "../../Components/TitleBar";
 import PortfolioList from "../../Components/PortfolioList";
-import {GetAllProjectsFromTable} from "../../Postgress/Database";
 import {useState, useEffect } from "react";
 
 export default function Home() {

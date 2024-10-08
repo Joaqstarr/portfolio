@@ -1,4 +1,6 @@
-﻿import PortfolioListBlock from "./PortfolioListBlock";
+﻿'use client'
+
+import PortfolioListBlock from "./PortfolioListBlock";
 import PortfolioListRow from "./PortfolioListRow";
 import React, { useState } from 'react';
 
