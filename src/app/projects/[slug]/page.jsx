@@ -38,10 +38,12 @@ export default function Page(params){
 
                 <Header element={{content:project.name}}/>
                 <div className="bg-slate-200 p-4 shadow-2xl rounded-2xl">
-                    {project != null && project.elements != null ?
+                    {(project != null && project.elements != null) ?
                         project.elements.map((element, index) => (
                             <Element key={index} element={element}/>
-                        )) : (<div>loading...</div>)}
+                        ))
+                        :
+                        (<div>loading...</div>)}
                 </div>
             </div>
 

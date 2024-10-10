@@ -1,28 +1,55 @@
-﻿export default function PortfolioListBlock(params) {
+﻿import {useState, useEffect} from "react";
+
+export default function PortfolioListBlock(params) {
+    const [name, setName] = useState("");
+    const [tags, setTags] = useState([]);
+    const [extraInfo, setExtraInfo] = useState("");
+    const defaultStyling = {
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "center center"
+    }
+    const [thumbnailStyling, setThumbnailStyling] = useState(defaultStyling);
+
+    useEffect(() => {
+        setName(params.project.name);
+        setTags(params.project.tags);
+        setExtraInfo(params.project.extraInfo);
+
+        let imagePath = params.project.thumbnail;
+        let backgroundColor = params.project.backgroundColor;
+        let highlightColor = params.project.highlightColor;
+
+        let newStyling = defaultStyling;
+
+        if(imagePath !== "" && imagePath != null){
+            newStyling.backgroundImage = `url(${imagePath})`;
+        }
+        if(backgroundColor !== "" && backgroundColor != null){
+            newStyling.backgroundColor = backgroundColor;
+        }
+        if(highlightColor !== "" && highlightColor != null){
+            newStyling.borderColor = highlightColor;
+        }
+        setThumbnailStyling(defaultStyling);
+
+    }, [params.project]);
+
+
     const handleClick = () => {
         params.click(params.project.name);
     }
 
-    let name = params.project.name;
-    let tags = params.project.tags;
-    let extraInfo = params.project.extraInfo;
-
-
-
-    let imagePath = "https://149455152.v2.pressablecdn.com/wp-content/uploads/2017/03/botw-featured.jpg";
     return (
         <div className="group overflow-hidden cursor-pointer shadow-2xl hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
         bg-gradient-to-r from-cyan-500 to-blue-500 ease-in-out duration-150 lg:hover:w-1/2
         "
-        style={{backgroundImage: `url(${imagePath})`,
-        backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-        }} onClick={handleClick}>
+        style={thumbnailStyling} onClick={handleClick}>
             <div className="flex flex-col justify-end w-fit  p-4">
                 <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold mb-3">
                     {name}
                 </p>
-                <div className="flex flex-row gap-1">
+                <div className="flex flex-row gap-1" >
                     {tags.map((tag, index)=>(
                     <Tag name={tag} key={index}/>
                 ))}

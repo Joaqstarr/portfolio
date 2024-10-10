@@ -16,7 +16,7 @@ export default function Home() {
     const  UpdateProjects = async () =>{
         //const table = await GetAllProjectsFromTable();
         const table = await loadJSONFiles('public/projects/');
-        console.log(JSON.stringify(table));
+        //console.log(JSON.stringify(table));
         setProjects(table)
     }
 
@@ -24,10 +24,14 @@ export default function Home() {
         <div>
             <TitleBar />
             {/**/}
-            <div className="ease-in duration-200 md:w-2/3 m-auto">
-                <PortfolioList projects={projects}/>
+            <div className="bg-slate-100">
+                <div className="ease-in duration-200 md:w-2/3 m-auto">
+                    <PortfolioList projects={projects}/>
 
+                </div>
             </div>
+
         </div>
     )
 }
+//bg-gradient-to-bl from-violet-900 to-cyan-400

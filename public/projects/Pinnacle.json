@@ -1,7 +1,7 @@
 ﻿{
   "name": "Pinnacle",
   "tags": ["Unity", "C#", "Postgres", "Supabase"],
-  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <br>Climb a mountain by building structures in a persistent environment.",
+  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
   "elements": [
     {
       "type": "carousel",
