@@ -2,6 +2,7 @@
 import Paragraph from "./Paragraph";
 import Subtitle from "./Subtitle";
 import Image from "./Image";
+import Video from "./Video";
 
 export default function Element(params){
     switch (params.element.type){
@@ -13,6 +14,8 @@ export default function Element(params){
             return (<Image element={params.element}/>);
         case "subtitle":
             return (<Subtitle element={params.element}/>);
+        case "video":
+            return (<Video element={params.element}/>);
 
     }
 }

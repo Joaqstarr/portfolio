@@ -7,25 +7,56 @@
   "highlightColor": "#97dcc0",
   "elements": [
     {
-      "type": "carousel",
-      "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
-      "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
+      "type": "paragraph",
+      "content": "Created in 1 month for the Metroidvania Month 23 Game Jam with a 4 person team. <br><br>I was the lead programmer and artist/tech artist."
     },
     {
-      "type":"subtitle",
-      "content": "post mortem..."
+      "type": "subtitle",
+      "content": "Fog Of War System"
     },
     {
       "type": "paragraph",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis felis fermentum, efficitur tortor non, vulputate turpis. Integer enim ex, sodales eu semper eget, dictum at mi. Maecenas tincidunt rutrum augue, sed congue lorem rhoncus a. Etiam commodo massa non erat interdum eleifend. Sed eget est posuere ex sollicitudin fringilla ut a turpis. In sagittis maximus viverra. Suspendisse facilisis eget tortor sed suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi justo, luctus in purus sagittis, efficitur volutpat neque. Aenean ante ligula, faucibus et turpis quis, pretium commodo justo. Integer a dolor ac urna efficitur tincidunt vel a lacus. Etiam in orci eu velit viverra porttitor. Nam cursus nibh quam. Proin ullamcorper pharetra viverra. Nulla faucibus venenatis tristique. Morbi viverra, enim vel pulvinar tempus, massa leo pulvinar massa, et aliquam mauris quam a sapien."
+      "content": "To prevent the player from seeing the entire game world before exploring, I created a fog of war system that clears up as the player advances. To achieve this I store the fog as an image, changing the alpha of pixels as the player explores. This is done in a small circular radius around the player, and in the players \"radar\" vision cone."
+    },
+    {
+    "type": "video",
+      "content": "/assets/cmdwave/fowvid.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/cmdwave/foweditorvid.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "When saving the game, the texture simply gets saved onto the drive. When loading, the game samples the texture on the drive. In engine, the texture is placed on a sprite that is placed between the game world and the camera. The fog leverages Unity's Job system to allow the expensive texture manipulation to occur on a different thread. I would like to return to this to see if a compute shader solution would be possible, however for now, multithreading enables stable performance."
+    },
+    {
+      "type": "paragraph",
+      "content": "The system also does raycasts along the radar cone, to ensure you it does not clear fog through walls. This is also used to create the cone mesh itself at runtime, this allows for the cone to appear to be blocked off by the walls of the cavern."
+    },
+    {
+      "type": "video",
+      "content": "/assets/cmdwave/radarConeMesh.webm"
+    },
+    {
+      "type": "subtitle",
+      "content": "Colorblind Accessibility Option"
+    },
+    {
+      "type": "paragraph",
+      "content": "1 day before the Jam deadline, I had a realization. A large portion of the game is about identifying red enemies on a green background. I also remembered, that one of my best friends just happened to be colorblind. I immediately took a screenshot and sent it to him, asking if he could identify the enemy in the image... <br><br>He responded: <i>Where is the red?</i>"
     },
     {
       "type": "image",
-      "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
+      "content": "/assets/cmdwave/red.jpg"
     },
     {
-      "type":"head",
-      "content": "Game Name!"
+      "type": "paragraph",
+      "content": "I began trying a host of different color combinations, and sending each one to him to see which he found easiest to see. What we found worked best was pink enemies and a purple radar cone. After hooking this material swap up to a toggle setting, I rest assured knowing he would be able to play without being utterly lost."
+    },
+    {
+      "type": "image",
+      "content": "/assets/cmdwave/pink.jpg"
     }
   ]
 }

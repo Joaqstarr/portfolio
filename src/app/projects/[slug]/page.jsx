@@ -33,21 +33,36 @@ export default function Page(params){
     }, [params.params.slug]);
     console.log();
     return (
-        <div className="bg-repeat h-full min-h-screen p-8" style={{backgroundImage:`url(${bgUrl})`}}>
-            <div className="ease-in duration-200 md:w-2/3 m-auto ">
+        <>
+        <style jsx>{`
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        `}</style>
+    <div className="bg-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient min-h-screen p-6">
 
-                <Header element={{content:project.name}}/>
-                <div className="bg-slate-200 p-4 shadow-2xl rounded-2xl">
-                    {(project != null && project.elements != null) ?
-                        project.elements.map((element, index) => (
+        <div className="ease-in duration-200 md:w-1/2 m-auto max-w-screen-sm">
+
+            <Header element={{content: project.name}}/>
+            <div className="ease-in duration-200 m-auto backdrop-blur-lg p-6 shadow-2xl rounded-2xl border-gray-200 border border-double min-h-80">
+                {(project != null && project.elements != null) ?
+                    project.elements.map((element, index) => (
                             <Element key={index} element={element}/>
                         ))
                         :
-                        (<div>loading...</div>)}
+                        (<div className="m-auto"></div>)}
                 </div>
             </div>
 
         </div>
-
+        </>
     );
 }

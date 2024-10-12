@@ -41,7 +41,7 @@ export default function PortfolioListBlock(params) {
     }
 
     return (
-        <div className="group overflow-hidden cursor-pointer shadow-2xl hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
+        <div className="group overflow-hidden cursor-pointer shadow-2xl hover:shadow-[5]xl hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
         bg-gradient-to-r from-cyan-500 to-blue-500 ease-in-out duration-150 lg:hover:w-1/2
         "
         style={thumbnailStyling} onClick={handleClick}>
@@ -57,7 +57,7 @@ export default function PortfolioListBlock(params) {
             </div>
 
             <div className="flex flex-col p-4 pr-0  items-end sm:w-full lg:w-fit lg:opacity-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent to-slate-600/50 to-30% group-hover:opacity-100 ease-in duration-200">
-                <p className="text-slate-50 w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300">{extraInfo}</p>
+                <p className="text-slate-50 w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300" dangerouslySetInnerHTML={{__html:extraInfo}}></p>
             </div>
         </div>
     )
