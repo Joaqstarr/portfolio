@@ -25,7 +25,7 @@ export default function Home() {
 
     const  UpdateProjects = async () =>{
         //const table = await GetAllProjectsFromTable();
-        const table = await loadJSONFiles('projects/');
+        const table = await loadJSONFiles('/projects/');
         //console.log(JSON.stringify(table));
         setProjects(table)
     }
