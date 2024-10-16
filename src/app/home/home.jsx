@@ -11,7 +11,6 @@ export default function Home() {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        console.log("URL!: " +process.env.NEXT_PUBLIC_API_URL);
         UpdateProjects();
 
         const handleScroll = () => {

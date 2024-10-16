@@ -31,7 +31,6 @@ export async function loadJSONFiles(directoryPath) {
 }
 
 export async function  fetchProjects () {
-    console.log("ENV VAR: " + process.env.NEXT_PUBLIC_API_URL);
     const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,'/api/projects'));
     if(!res.ok){
         throw new Error("Error fetching projects: " + res.statusText);

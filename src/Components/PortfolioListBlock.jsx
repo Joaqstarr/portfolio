@@ -12,6 +12,7 @@ export default function PortfolioListBlock(params) {
     const [thumbnailStyling, setThumbnailStyling] = useState(defaultStyling);
 
     useEffect(() => {
+        console.log(JSON.stringify(params.project));
         setName(params.project.name);
         setTags(params.project.tags);
         setExtraInfo(params.project.extraInfo);
