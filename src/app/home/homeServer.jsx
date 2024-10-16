@@ -29,3 +29,16 @@ export async function loadJSONFiles(directoryPath) {
 
     return jsonData;
 }
+
+export async function  fetchProjects () {
+    console.log("ENV VAR: " + process.env.NEXT_PUBLIC_API_URL);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`);
+    const { files } = await res.json();
+
+    return await Promise.all(
+        files.map(async (file) => {
+            const res = await fetch(process.env.NEXT_PUBLIC_API_URL+file);
+            return res.json();
+        })
+    );
+};

@@ -1,7 +1,7 @@
 ﻿'use client'
 
 
-import {loadJSONFiles} from "./homeServer";
+import {loadJSONFiles, fetchProjects} from "./homeServer";
 import TitleBar from "../../Components/TitleBar";
 import PortfolioList from "../../Components/PortfolioList";
 import {useState, useEffect } from "react";
@@ -25,7 +25,7 @@ export default function Home() {
 
     const  UpdateProjects = async () =>{
         //const table = await GetAllProjectsFromTable();
-        const table = await loadJSONFiles('public/projects/');
+        const table = await fetchProjects();
         //console.log(JSON.stringify(table));
         setProjects(table)
     }
