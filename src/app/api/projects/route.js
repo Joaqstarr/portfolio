@@ -1,19 +1,22 @@
-﻿import fs from 'fs';
-import path from 'path';
+﻿import path from 'path';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    // Use process.cwd() to get the root directory
-    const projectsDirectory = path.join(process.cwd(), 'public/projects');
+    const cacheFilePath = path.join(process.env.NEXT_PUBLIC_API_URL, '/projCache.json');
+    try {
 
-    // Read the directory
-    const filenames = fs.readdirSync(projectsDirectory);
 
-    // Filter for JSON files only
-    const jsonFiles = filenames.filter((file) => file.endsWith('.json'));
+        // Read the cached JSON file
+        const cacheData = await fetch(cacheFilePath);
+        const files = await cacheData.json();
 
-    console.log(JSON.stringify(jsonFiles));
-    const filePaths = jsonFiles.map((file) => `/projects/${file}`);
-    // Return the list of file URLs
-    return  NextResponse.json({ files: filePaths });
+        // Return the list of file URLs
+        return NextResponse.json({
+            files
+        });
+    }catch(error){
+
+        console.error(`Error fetching JSON file: ${cacheFilePath}`, error);
+        return NextResponse.json({ error: 'Failed to fetch project files' }, { status: 500 });
+    }
 }

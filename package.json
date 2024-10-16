@@ -16,8 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/cacheProjects.js && next dev",
+    "build": "node scripts/cacheProjects.js && next build",
     "start": "npx serve@latest ./build"
   },
   "eslintConfig": {

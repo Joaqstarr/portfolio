@@ -32,19 +32,21 @@ export async function loadJSONFiles(directoryPath) {
 
 export async function  fetchProjects () {
     console.log("ENV VAR: " + process.env.NEXT_PUBLIC_API_URL);
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL+'/api/projects');
+    const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,'/api/projects'));
     if(!res.ok){
-        throw new Error("Error fetching projects");
+        throw new Error("Error fetching projects: " + res.statusText);
     }
-    const { files } = await res.json();
+    const data = await res.json();
+    const files = data.files.files;
+
 
     return await Promise.all(
         files.map(async (file) => {
-            const res = await fetch(process.env.NEXT_PUBLIC_API_URL+file);
+            const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,file));
             if (!res.ok) {
                 throw new Error(`Failed to fetch project: ${file}`);
             }
             return res.json();
         })
     );
-};
+}
