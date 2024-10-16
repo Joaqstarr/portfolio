@@ -13,8 +13,7 @@ export async function GET() {
     const jsonFiles = filenames.filter((file) => file.endsWith('.json'));
 
     console.log(JSON.stringify(jsonFiles));
+    const filePaths = jsonFiles.map((file) => `/projects/${file}`);
     // Return the list of file URLs
-    return NextResponse.json({
-        files: jsonFiles.map((file) => `/projects/${file}`),
-    });
+    return  NextResponse.json({ files: filePaths });
 }
