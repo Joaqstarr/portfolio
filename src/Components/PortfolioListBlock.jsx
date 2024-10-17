@@ -1,4 +1,5 @@
-﻿import {useState, useEffect} from "react";
+﻿'use client'
+import {useState, useEffect} from "react";
 import path from "path";
 
 export default function PortfolioListBlock(params) {
@@ -13,7 +14,6 @@ export default function PortfolioListBlock(params) {
     const [thumbnailStyling, setThumbnailStyling] = useState(defaultStyling);
 
     useEffect(() => {
-        console.log(JSON.stringify(params.project));
         setName(params.project.name);
         setTags(params.project.tags);
         setExtraInfo(params.project.extraInfo);
@@ -25,6 +25,7 @@ export default function PortfolioListBlock(params) {
         let newStyling = defaultStyling;
 
         if(imagePath !== "" && imagePath != null){
+            console.log(process.env.NEXT_PUBLIC_API_URL + "/" + imagePath);
             newStyling.backgroundImage = `url(${process.env.NEXT_PUBLIC_API_URL + "/" + imagePath})`;
         }
         if(backgroundColor !== "" && backgroundColor != null){
