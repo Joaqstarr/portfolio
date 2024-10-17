@@ -23,8 +23,7 @@ export default function PortfolioListBlock(params) {
         let backgroundColor = params.project.backgroundColor;
         let highlightColor = params.project.highlightColor;
 
-        let newStyling = defaultStyling;
-
+        let newStyling = {...defaultStyling};
         if(imagePath !== "" && imagePath != null){
             console.log(process.env.NEXT_PUBLIC_API_URL + "/" + imagePath);
             newStyling.backgroundImage = `url(${process.env.NEXT_PUBLIC_API_URL + "/" + imagePath})`;
@@ -35,7 +34,7 @@ export default function PortfolioListBlock(params) {
         if(highlightColor !== "" && highlightColor != null){
             newStyling.borderColor = highlightColor;
         }
-        setThumbnailStyling(defaultStyling);
+        setThumbnailStyling(newStyling);
 
     }, [params.project.thumbnail, params.project.backgroundColor, params.project.highlightColor, params.project]);
 
