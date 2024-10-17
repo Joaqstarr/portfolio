@@ -1,4 +1,5 @@
 ﻿import {useState, useEffect} from "react";
+import path from "path";
 
 export default function PortfolioListBlock(params) {
     const [name, setName] = useState("");
@@ -24,7 +25,7 @@ export default function PortfolioListBlock(params) {
         let newStyling = defaultStyling;
 
         if(imagePath !== "" && imagePath != null){
-            newStyling.backgroundImage = `url(${imagePath})`;
+            newStyling.backgroundImage = `url(${process.env.NEXT_PUBLIC_API_URL + "/" + imagePath})`;
         }
         if(backgroundColor !== "" && backgroundColor != null){
             newStyling.backgroundColor = backgroundColor;
