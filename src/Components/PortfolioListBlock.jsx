@@ -6,6 +6,7 @@ export default function PortfolioListBlock(params) {
     const [name, setName] = useState("");
     const [tags, setTags] = useState([]);
     const [extraInfo, setExtraInfo] = useState("");
+
     const defaultStyling = {
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
@@ -47,7 +48,7 @@ export default function PortfolioListBlock(params) {
         <div className="group overflow-hidden cursor-pointer shadow-2xl hover:shadow-[5]xl hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
         bg-gradient-to-r from-cyan-500 to-blue-500 ease-in-out duration-150 lg:hover:w-1/2
         "
-        style={thumbnailStyling} onClick={handleClick}>
+        style={{backgroundImage: `url(https://portfolio-joaqstarrs-projects.vercel.app/assets/cmdwave/banner.png)`}} onClick={handleClick}>
             <div className="flex flex-col justify-end w-fit  p-4">
                 <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold mb-3">
                     {name}
