@@ -5,35 +5,24 @@ import React, {useState, useEffect} from "react";
 import "../../../globals.css"
 import Header from "../../../Components/BlogParts/Header";
 import TableOfContents from "../../../Components/tableOfContents";
+import {ParseJson} from "./projPageServer";
 
 export default function Page(params){
     const [project, setProjects] = useState([]);
     const [headers, setHeaders] = useState([]);
     const [slug, setSlug] = useState('');
 
-    const bgUrl = "/cross-stripes.png";
-    const ParseJson = async (slug) =>{
-        try{
-            const response = await fetch('/projects/' + slug +'.json');
 
-            if(!response.ok) throw new Error('Failed to fetch JSON');
-
-            const data = await response.json();
-            setProjects(data);
-        }catch(error){
-            console.error("Error Fetching JSON: ", error);
-        }
-
-    }
 
 
     useEffect( () => {
-        async function FetchPageData(){
-            setSlug(params.params.slug);
-            await ParseJson(params.params.slug);
 
-        }
-        FetchPageData();
+
+        setSlug(params.params.slug);
+
+        ParseJson(params.params.slug).then((res) =>{
+           setProjects(res);
+        });
 
     }, [params.params.slug]);
 
@@ -57,7 +46,8 @@ export default function Page(params){
             observer.disconnect();
         };
     }, [project])
-    console.log();
+
+
     return (
         <>
         <style jsx>{`
