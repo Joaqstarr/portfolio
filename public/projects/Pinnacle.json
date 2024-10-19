@@ -58,7 +58,16 @@
     },
     {
       "type":"subtitle",
-      "content": "Map Tools"
+      "content": "Prefab Placement Tool"
+    },
+    {
+      "type": "paragraph",
+      "content": "While the mountain generation itself wasn't entirely procedural, placing the handholds to allow for climbing on the mountain was. I created a tool that allows me to specify some simple parameters, like a noise map, density value, and prefab. It then steps through my terrain, using those factors and the steepness at the current location to create a fitness value. Handholds are then placed at each suitable location. Using my current settings, 18,317 hand holds are placed procedurally around the level. Doing this manually would not only be tedious and out of scope for a 96 hour jam, it would be a large pain in the wrist!"
+    },
+    {
+      "type": "image",
+      "content": "/assets/pinnacle/placementTool.jpg",
+      "alt": "Screenshot of Prefab Placement tool window."
     }
   ]
 }
