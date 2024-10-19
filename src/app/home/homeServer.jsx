@@ -41,6 +41,7 @@ export async function  fetchProjects () {
 
     return await Promise.all(
         files.map(async (file) => {
+            console.log("loading: " + file)
             const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,file));
             if (!res.ok) {
                 throw new Error(`Failed to fetch project: ${file}`);

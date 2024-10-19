@@ -38,15 +38,15 @@ export default function Page(params){
     }, [params.params.slug]);
 
     useEffect(()=>{
-        const updateHeadings = () => {
+        const useUpdateHeadings = () => {
             setHeaders(useHeadingsData());
         };
         // Initial scan of headings
-        updateHeadings();
+        useUpdateHeadings();
 
         // Use MutationObserver to detect DOM changes and update headings dynamically
         const observer = new MutationObserver(() => {
-            updateHeadings();
+            useUpdateHeadings();
         });
 
         // Observe changes in the body for added/removed elements

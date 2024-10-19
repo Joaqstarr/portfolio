@@ -10,6 +10,7 @@ export async function GET() {
         const cacheData = await fetch(cacheFilePath);
         const files = await cacheData.json();
 
+        console.log("path: " + cacheFilePath + " files: " + JSON.stringify(files));
         // Return the list of file URLs
         return NextResponse.json({
             files

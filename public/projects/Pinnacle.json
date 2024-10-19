@@ -2,6 +2,8 @@
   "name": "Pinnacle",
   "tags": ["Unity", "C#", "PostgreSQL", "Supabase"],
   "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
+  "itch": "https://joaqstarr.itch.io/pinnacle",
+  "github": "https://github.com/Joaqstarr/Pinnacle",
   "thumbnail": "assets/pinnacle/banner.jpg",
   "backgroundColor": "#452c49",
   "highlightColor": "#91847c",
