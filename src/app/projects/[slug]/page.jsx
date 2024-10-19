@@ -38,15 +38,15 @@ export default function Page(params){
     }, [params.params.slug]);
 
     useEffect(()=>{
-        const useUpdateHeadings = () => {
-            setHeaders(useHeadingsData());
+        const UpdateHeadings = () => {
+            setHeaders(HeadingsData());
         };
         // Initial scan of headings
-        useUpdateHeadings();
+        UpdateHeadings();
 
         // Use MutationObserver to detect DOM changes and update headings dynamically
         const observer = new MutationObserver(() => {
-            useUpdateHeadings();
+            UpdateHeadings();
         });
 
         // Observe changes in the body for added/removed elements
@@ -100,7 +100,7 @@ export default function Page(params){
 }
 
 
-function useHeadingsData() {
+function HeadingsData() {
     let headings = [];
 
     const headingElements = Array.from(
@@ -114,11 +114,13 @@ function useHeadingsData() {
 
 function CreateObjectFromHeadings(headingElements){
     const headings = [];
+
     headingElements.forEach((headingEl, index) => {
         const {innerText: title, id} = headingEl;
 
         headings.push({id, title});
     });
+
     return headings;
 }
 
