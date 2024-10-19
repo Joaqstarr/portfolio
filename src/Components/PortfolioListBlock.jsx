@@ -69,7 +69,7 @@ export default function PortfolioListBlock(params) {
 
 function Tag(props){
     return(
-        <div className="bg-blue-800 text-blue-100 rounded-xl p-1 px-2 text-xs">
+        <div className="bg-blue-800 text-blue-100 rounded-xl p-1 px-2 text-xs text-nowrap">
             {props.name}
         </div>
     )

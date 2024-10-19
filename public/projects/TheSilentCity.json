@@ -1,6 +1,6 @@
 ﻿{
-  "name": "Pinnacle",
-  "tags": ["Unity", "C#", "Postgres", "Supabase"],
+  "name": "The Silent City",
+  "tags": ["Unity", "C#"],
   "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
   "elements": [
     {

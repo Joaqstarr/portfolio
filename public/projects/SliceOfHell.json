@@ -1,12 +1,16 @@
 ﻿{
-  "name": "Redline",
-  "tags": ["Unity", "C#", "Android", "BLE"],
-  "extraInfo": "Programmer, Limbitless Solutions",
+  "name": "Slice of Hell",
+  "tags": ["Unity", "C#", "Postgres", "Supabase"],
+  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
   "elements": [
     {
       "type": "carousel",
       "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
       "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
+    },
+    {
+      "type":"head",
+      "content": "Game Name!"
     },
     {
       "type":"subtitle",
@@ -19,10 +23,6 @@
     {
       "type": "image",
       "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
-    },
-    {
-      "type":"head",
-      "content": "Game Name!"
     }
   ]
 }

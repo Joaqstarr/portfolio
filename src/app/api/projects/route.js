@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     const cacheFilePath = path.join(process.env.NEXT_PUBLIC_API_URL, '/projCache.json');
+
     try {
 
 

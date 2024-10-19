@@ -3,6 +3,7 @@
 import PortfolioListBlock from "./PortfolioListBlock";
 import PortfolioListRow from "./PortfolioListRow";
 import React, { useState } from 'react';
+import EmptyPortofolioBlock from "./EmptyPortfolioBlock";
 
 export default function PortfolioList(params) {
     const handleClick = (page) => {
@@ -22,6 +23,9 @@ export default function PortfolioList(params) {
                     {pair.map((item, subIdx) => (
                         <PortfolioListBlock key={subIdx} project={item} click={handleClick}/>
                     ))}
+                    {pair.length % 2 !== 0 && (
+                        <EmptyPortofolioBlock/>
+                    )}
                 </PortfolioListRow>
             ))}
         </div>
