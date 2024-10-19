@@ -1,28 +1,64 @@
 ﻿{
   "name": "Pinnacle",
-  "tags": ["Unity", "C#", "Postgres", "Supabase"],
+  "tags": ["Unity", "C#", "PostgreSQL", "Supabase"],
   "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
+  "thumbnail": "assets/pinnacle/banner.jpg",
+  "backgroundColor": "#452c49",
+  "highlightColor": "#91847c",
   "elements": [
     {
-      "type": "carousel",
-      "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
-      "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
-    },
-    {
-      "type":"head",
-      "content": "Game Name!"
+      "type": "paragraph",
+      "content": "Created in 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer."
     },
     {
       "type":"subtitle",
-      "content": "post mortem..."
+      "content": "Supabase"
     },
     {
       "type": "paragraph",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis felis fermentum, efficitur tortor non, vulputate turpis. Integer enim ex, sodales eu semper eget, dictum at mi. Maecenas tincidunt rutrum augue, sed congue lorem rhoncus a. Etiam commodo massa non erat interdum eleifend. Sed eget est posuere ex sollicitudin fringilla ut a turpis. In sagittis maximus viverra. Suspendisse facilisis eget tortor sed suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi justo, luctus in purus sagittis, efficitur volutpat neque. Aenean ante ligula, faucibus et turpis quis, pretium commodo justo. Integer a dolor ac urna efficitur tincidunt vel a lacus. Etiam in orci eu velit viverra porttitor. Nam cursus nibh quam. Proin ullamcorper pharetra viverra. Nulla faucibus venenatis tristique. Morbi viverra, enim vel pulvinar tempus, massa leo pulvinar massa, et aliquam mauris quam a sapien."
+      "content": "With this game, I wanted to experiment with databases. To do so, I created a system where everything you build in the game is added to a database, which is loaded when opening the game. This allows all buildings in the game to persist and update in real time. You can see the routes past players have taken up the mountain, you can also see which areas are unexplored, and chart your own journey. Building has a relatively long cooldown, to force players to rely on other players for help."
     },
     {
       "type": "image",
-      "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
+      "content": "/assets/pinnacle/table.jpg",
+      "alt": "Screenshot of objects table in Supabase."
+    },
+    {
+      "type": "paragraph",
+      "content": "There is an OBJECTS table, where each row corresponds to a specific object. There is also a USERS table, used to store player's cooldowns. I used Supabase's c# library to interface with the database, using PostgreSQL commands to GET, and UPDATE when loading or building. Realtime updates are provided through Supabase's realtime service, allowing for other players builds to be added to your game as they happen, instead of just on an initial load."
+    },
+    {
+      "type":"subtitle",
+      "content": "Procedural Animation"
+    },
+    {
+      "type": "paragraph",
+      "content": "For the arm animation animations, I used Unity's Animation Rigging Package to leverage procedural animation. The Hands are placed on the rocks using IK, finding a suitable position the correct distance from a hold, and setting their rotation to the normal of the hold's surface."
+    },
+
+    {
+      "type": "video",
+      "content": "/assets/pinnacle/climbingAnimation.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/pinnacle/grabLetgo.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "Each finger is then placed on the surface of the rock. A raycast if fired from each finger tip to a hint position near the palm. I then use IK to place the finger tip at the surface position each ray collides."
+    },
+    {
+      "type": "video",
+      "content": "/assets/pinnacle/fingers.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/pinnacle/fingerIK.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "Map Tools"
     }
   ]
 }
