@@ -11,6 +11,6 @@ export default function Subtitle(params) {
     )
 }
 
-function CreateIdName(text){
+export function CreateIdName(text){
     return text.replace(/\s+/g, '-');
 }
