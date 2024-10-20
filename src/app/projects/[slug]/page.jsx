@@ -39,7 +39,7 @@ export default function Page(params){
         });
 
         // Observe changes in the body for added/removed elements
-        observer.observe(document.body, { childList: true, subtree: true });
+        observer.observe(document.body, { childList: true, subtree: false });
 
         // Cleanup observer on unmount
         return () => {
