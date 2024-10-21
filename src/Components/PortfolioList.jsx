@@ -33,6 +33,6 @@ export default function PortfolioList(params) {
 }
 
 function ConvertNameToUrlSafe(name){
-    let noSpace = name.replace(" ", "");
-    return noSpace.replace(":", "");
+    let noSpace = name.replaceAll(" ", "");
+    return noSpace.replaceAll(":", "");
 }

@@ -9,7 +9,7 @@ export default function PortfolioListBlock(params) {
 
     const defaultStyling = {
         backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "center center"
     }
     const [thumbnailStyling, setThumbnailStyling] = useState(defaultStyling);

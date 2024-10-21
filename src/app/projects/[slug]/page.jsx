@@ -127,8 +127,11 @@ function CreateObjectFromHeadings(headingElements){
 
 
 function TableOfContentsPane({headers}){
-    return (<div
-        className="w-auto text-nowrap sticky h-min top-8 bg-gray-100  p-4 shadow-2xl rounded-2xl border-gray-200 border border-double">
-        <TableOfContents headingData={headers}/>
-    </div>)
+    const invis = {opacity: 0, pointerEvents: "none", height: "1px", paddingTop: "0px", paddingBottom: "0px"};
+
+    return (
+        <div className="w-auto text-nowrap sticky h-min top-8 bg-gray-100  p-4 shadow-2xl rounded-2xl border-gray-200 border border-double" style={(headers.length <= 1) ? invis : {}}>
+            <TableOfContents headingData={headers}/>
+        </div>
+    )
 }

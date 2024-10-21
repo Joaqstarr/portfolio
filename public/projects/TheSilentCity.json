@@ -1,28 +1,41 @@
 ﻿{
   "name": "The Silent City",
   "tags": ["Unity", "C#"],
-  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
+  "extraInfo": "Game Designer and Programmer. <br> Made for Secret Santa Jam 2023 in ~20 days",
+  "itch": "https://joaqstarr.itch.io/the-silent-city",
+  "github": "https://github.com/Joaqstarr/The-Silent-City",
+  "thumbnail": "assets/silentCity/banner.png",
+  "backgroundColor": "#d25d85",
+  "highlightColor": "#1f1440",
   "elements": [
     {
-      "type": "carousel",
-      "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
-      "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
-    },
-    {
-      "type":"head",
-      "content": "Game Name!"
+      "type": "paragraph",
+      "content": "Created for the 2023 Secret Santa Jam in about 20 days. I was the programmer and designer on the project, along with 1 composer, 1 artist, and 1 writer."
     },
     {
       "type":"subtitle",
-      "content": "post mortem..."
+      "content": "Battle System"
     },
     {
       "type": "paragraph",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis felis fermentum, efficitur tortor non, vulputate turpis. Integer enim ex, sodales eu semper eget, dictum at mi. Maecenas tincidunt rutrum augue, sed congue lorem rhoncus a. Etiam commodo massa non erat interdum eleifend. Sed eget est posuere ex sollicitudin fringilla ut a turpis. In sagittis maximus viverra. Suspendisse facilisis eget tortor sed suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi justo, luctus in purus sagittis, efficitur volutpat neque. Aenean ante ligula, faucibus et turpis quis, pretium commodo justo. Integer a dolor ac urna efficitur tincidunt vel a lacus. Etiam in orci eu velit viverra porttitor. Nam cursus nibh quam. Proin ullamcorper pharetra viverra. Nulla faucibus venenatis tristique. Morbi viverra, enim vel pulvinar tempus, massa leo pulvinar massa, et aliquam mauris quam a sapien."
+      "content": "This game was interesting, as I've received a prompt as part of the Jam. One piece of it, was that the recipient really enjoyed singing. Also while working on the game, I had been practicing my piano. So from both those things, I had the idea for a musical combat system that encourages creating songs. Instead of a list of moves, you are given a music staff, and the ability to sing different rhythms. Each type of note has it's own ability."
     },
     {
       "type": "image",
-      "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
+      "content": "/assets/silentCity/notecheatsheet.jpg",
+      "alt": "Documents each type of note and their effect."
+    },
+    {
+      "type": "paragraph",
+      "content": "In practice this is pretty simple to implement, just with an array of note objects. When playing, the notes get added to the array. Then during playback, the playhead steps down each element of the array, applying each note's effect. "
+    },
+    {
+      "type": "video",
+      "content": "/assets/silentCity/noteMapSystem.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "By knowing the time each note has been pressed down, and the BPM of playback, the type of note can be found. This then gets translated into the effect and art that is displayed. The system even picks up Quarter dot and Half dot notes."
     }
   ]
 }
