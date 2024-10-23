@@ -30,6 +30,10 @@
       "content": "There is an OBJECTS table, where each row corresponds to a specific object. There is also a USERS table, used to store player's cooldowns. I used Supabase's c# library to interface with the database, using PostgreSQL commands to GET, and UPDATE when loading or building. Realtime updates are provided through Supabase's realtime service, allowing for other players builds to be added to your game as they happen, instead of just on an initial load."
     },
     {
+      "type": "video",
+      "content": "/assets/pinnacle/structureSpawn.webm"
+    },
+    {
       "type":"subtitle",
       "content": "Procedural Animation"
     },
