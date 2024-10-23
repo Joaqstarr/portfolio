@@ -3,6 +3,7 @@ import Paragraph from "./Paragraph";
 import Subtitle from "./Subtitle";
 import Image from "./Image";
 import Video from "./Video";
+import ProjectTime from "./ProjectTime";
 
 export default function Element(params){
     switch (params.element.type){
@@ -16,6 +17,8 @@ export default function Element(params){
             return (<Subtitle element={params.element}/>);
         case "video":
             return (<Video element={params.element}/>);
+        case "time":
+            return (<ProjectTime element={params.element}/>);
 
     }
 }

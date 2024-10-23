@@ -9,6 +9,10 @@
   "highlightColor": "#91847c",
   "elements": [
     {
+      "type": "time",
+      "content": "96 Hours"
+    },
+    {
       "type": "paragraph",
       "content": "Created in 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer."
     },
