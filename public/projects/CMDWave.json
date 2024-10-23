@@ -61,6 +61,10 @@
       "type": "image",
       "content": "/assets/cmdwave/pink.jpg",
       "alt": "Screenshot depicting alternative color scheme, with magenta radar waves."
+    },
+    {
+      "type": "subtitle",
+      "content": "Room System"
     }
   ]
 }
