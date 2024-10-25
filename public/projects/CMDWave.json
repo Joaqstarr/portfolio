@@ -65,6 +65,48 @@
     {
       "type": "subtitle",
       "content": "Room System"
+    },
+    {
+      "type": "paragraph",
+      "content": "In the game, you expand your submarine by collecting rooms through a terminal interface. Each room you collect grants your submarine abilities. It also physically increases the size of the sub, allowing you to walk around from room to room. This is done using a pooling system, where unused rooms are held off to the side, and snapped into their proper place when collected. The player can choose to place the room wherever there is a connecting space."
+    },
+    {
+      "type": "video",
+      "content": "/assets/cmdwave/RoomAdding.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "Originally, when adding the ability to drop rooms again, I began working on a system that determined which rooms were had no rooms depending on them, essentially only allowing you to drop the \"leaves\" of graph. I realized this would likely be overkill as I wouldn't want the player to deal with such a limitation. Instead, if a room is being depended on, it becomes a hallway, allowing for the player to still traverse the entire sub."
+    },
+    {
+      "type": "video",
+      "content": "/assets/cmdwave/roomDropping.webm"
+    },
+    {
+      "type": "subtitle",
+      "content": "Command System"
+    },
+    {
+      "type": "paragraph",
+      "content": "You interface with the submarine partially using a terminal interface. You begin with some basic commands, and each room you collect can have additional commands, increasing your abilities. For example, the Save room gives you 2 commands. Saving, and loading. These are 2 seperate classes that inherit from the CommandBase class."
+    },
+    {
+      "type": "image",
+      "content": "/assets/cmdwave/saveRoom.jpg",
+      "alt": "Screenshot depicting inspector view of the Save/Load room"
+    },    {
+      "type": "paragraph",
+      "content": "Below is a snippet of the BaseCommand Class. Execute gets overriden in each individual command. This gets ran when you call the command itself. It returns output text to be sent to the terminal. Override Context allows for the command to ask a question and await an answer, setting which commands will be valid for the next input. Because of this, the CheckCommand method is virtual. Generally commands are checked by their name, but in certain situations, they may be awaiting a number or text response. This method can be overriden so it can look for exactly what the command needs. They also have a sound effect out parameter, which allows for different sounds to play based off the command. Finally they have an argument, which allows for commands to take in extra info beyond their name."
+    },
+    {
+      "type": "code",
+      "content": "public abstract string[] Execute(out CommandContext overrideContext, out AudioClip sfx, string arg =null);\\n\\npublic virtual bool CheckCommand(string commandName)\\n{\\n    return _commandName.ToLower() == commandName.ToLower();\\n}",
+
+      "language": "C#"
+    },
+    {
+      "type": "video",
+      "content": "/assets/cmdwave/commandSystem.webm"
     }
   ]
 }

@@ -4,6 +4,7 @@ import Subtitle from "./Subtitle";
 import Image from "./Image";
 import Video from "./Video";
 import ProjectTime from "./ProjectTime";
+import Code from "./Code";
 
 export default function Element(params){
     switch (params.element.type){
@@ -19,6 +20,8 @@ export default function Element(params){
             return (<Video element={params.element}/>);
         case "time":
             return (<ProjectTime element={params.element}/>);
+        case "code":
+            return(<Code element={params.element}/>);
 
     }
 }
