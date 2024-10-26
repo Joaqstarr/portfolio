@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   const files = data.files.files;
 
   return files.map((file) => ({
-    slug: file, // Replace with the appropriate key from your JSON file
+    slug: file.replaceAll("/projects/", "").replaceAll(".json", ""),
   }));
 }
 
