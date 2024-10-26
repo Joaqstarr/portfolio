@@ -68,7 +68,7 @@ export async function generateMetadata({ params }) {
       title: res?.name || 'Joaquin Royer',
       description: res?.extraInfo || 'Game Programming Portfolio',
       images: [res?.thumbnail || '/default-image.jpg'],
-    },
+    }
   };
 }
 
