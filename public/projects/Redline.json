@@ -2,10 +2,10 @@
   "order": "0",
   "name": "Redline",
   "tags": ["Unity", "C#", "Android", "BLE"],
-  "extraInfo": "Programmer, Limbitless Solutions",
-  "thumbnail": "assets/pinnacle/banner.jpg",
+  "extraInfo": "Lead Developer + Programmer, Limbitless Solutions",
+  "thumbnail": "assets/redline/banner.jpg",
   "backgroundColor": "#452c49",
-  "highlightColor": "#91847c",
+  "highlightColor": "#b82e0f",
   "elements": [
     {
       "type": "time",

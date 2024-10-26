@@ -49,7 +49,7 @@ export default function PortfolioListBlock(params) {
         style={thumbnailStyling} onClick={handleClick}>
 
             <div className="flex flex-col justify-end w-fit  p-4">
-                <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold mb-3 max-w-24">
+                <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold mb-3 lg:max-w-24">
                     {name}
                 </p>
                 <div className="flex flex-row gap-1" >
@@ -59,8 +59,8 @@ export default function PortfolioListBlock(params) {
                 </div>
             </div>
 
-            <div className="flex flex-col p-4 pr-0  items-end sm:w-full lg:w-fit lg:opacity-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent to-slate-600/50 to-30% group-hover:opacity-100 ease-in duration-200">
-                <p className="text-slate-50 w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300 max-w-72" dangerouslySetInnerHTML={{__html:extraInfo}}></p>
+            <div className=" flex flex-col p-4 lg:pr-0  items-end w-full lg:w-fit lg:opacity-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent to-slate-600/50 to-30% group-hover:opacity-100 ease-in duration-200">
+                <p className=" w-full lg:max-w-72 text-slate-50 lg:w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300 " dangerouslySetInnerHTML={{__html:extraInfo}}></p>
             </div>
         </div>
     )
