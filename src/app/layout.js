@@ -2,8 +2,12 @@
     return (
         <html lang="en">
         <head>
-            <title>React App</title>
-            <meta name="description" content="Web site created..."/>
+
+            <meta name="keywords" content="Game Programmer, Joaquin Royer, Unity, C#, Unreal, C++, Game Design"/>
+            <meta name="author" content="Joaquin Royer"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
             <script src="https://kit.fontawesome.com/a698b42bb1.js" crossOrigin="anonymous"></script>
 
         </head>

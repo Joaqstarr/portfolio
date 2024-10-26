@@ -18,3 +18,11 @@ const fs = require('fs');
 
 
 
+export async function generateMetadata({ params }) {
+
+    return {
+        title: "Joaquin Royer" || 'Default Title',
+        description: "Game Programming Portfolio" || 'Default description',
+    };
+
+}

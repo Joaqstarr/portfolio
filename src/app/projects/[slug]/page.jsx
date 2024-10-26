@@ -1,4 +1,5 @@
-﻿import path from "path";
+﻿"use server"
+import path from "path";
 import PageClient from "./pageClient";
 
 
@@ -44,3 +45,15 @@ export default async function Page(params) {
   )
 
 }
+
+export async function generateMetadata({ params }) {
+  const res = await ParseJson(params.slug);
+
+  return {
+    title: res.name || 'Default Title',
+    description: res.extraInfo || 'Default description',
+    image: res.thumbnail || 'Default thumbnail',
+  };
+}
+
+
