@@ -32,7 +32,7 @@ export default function Code(params) {
         }
     }, [code]);
     return (
-        <div className="relative bg-gray-900 rounded-md max-w-80 lg:max-w-screen-sm shadow-lg overflow-hidden">
+        <div className="mb-7 relative bg-gray-900 rounded-md max-w-80 lg:max-w-screen-sm shadow-lg overflow-hidden">
             <div className="bg-gray-800 text-gray-300 text-sm font-mono px-4 py-2">
                 {params.element.language.toUpperCase()}
             </div>

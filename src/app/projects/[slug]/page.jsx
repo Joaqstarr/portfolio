@@ -4,8 +4,7 @@ import PageClient from "./pageClient";
 
 export async function ParseJson(slug){
   try{
-  const response = await fetch('/projects/' + slug +'.json');
-
+  const response = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,'/projects/' + slug +'.json'));
   if(!response.ok) throw new Error('Failed to fetch JSON');
 
   const data = await response.json();
@@ -31,9 +30,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page(params) {
+
+
+export default async function Page(params) {
+
+
+  const res = await ParseJson(params.params.slug);
+
   return(
-      <PageClient params={params.params}/>
+      <PageClient params={params.params} project={res}/>
   )
 
 }
