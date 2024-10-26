@@ -50,9 +50,25 @@ export async function generateMetadata({ params }) {
   const res = await ParseJson(params.slug);
 
   return {
-    title: res.name || 'Default Title',
-    description: res.extraInfo || 'Default description',
-    image: res.thumbnail || 'Default thumbnail',
+    title: res?.name || 'Joaquin Royer',
+    description: res?.extraInfo || 'Game Programming Portfolio',
+    openGraph: {
+      title: res?.name || 'Joaquin Royer',
+      description: res?.extraInfo || 'Game Programming Portfolio',
+      images: [
+        {
+          url: res?.thumbnail || '/default-image.jpg', // Default image path in case there's none in JSON
+          width: 1200,
+          height: 630,
+          alt: res?.name || 'Game Programming Portfolio',
+        },
+      ],
+    },
+    twitter: {
+      title: res?.name || 'Joaquin Royer',
+      description: res?.extraInfo || 'Game Programming Portfolio',
+      images: [res?.thumbnail || '/default-image.jpg'],
+    },
   };
 }
 
