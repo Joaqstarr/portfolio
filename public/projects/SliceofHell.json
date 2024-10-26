@@ -1,4 +1,5 @@
 ﻿{
+  "order": "4",
   "name": "Slice of Hell",
   "tags": ["Unity", "C#", "Postgres", "Supabase"],
   "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",

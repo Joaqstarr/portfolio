@@ -1,4 +1,5 @@
 ﻿{
+  "order": "2",
   "name": "Pinnacle",
   "tags": ["Unity", "C#", "PostgreSQL", "Supabase"],
   "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",

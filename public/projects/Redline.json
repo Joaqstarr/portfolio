@@ -1,28 +1,101 @@
 ﻿{
+  "order": "0",
   "name": "Redline",
   "tags": ["Unity", "C#", "Android", "BLE"],
   "extraInfo": "Programmer, Limbitless Solutions",
+  "thumbnail": "assets/pinnacle/banner.jpg",
+  "backgroundColor": "#452c49",
+  "highlightColor": "#91847c",
   "elements": [
     {
-      "type": "carousel",
-      "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
-      "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
+      "type": "time",
+      "content": "August 2023 - March 2024"
     },
     {
       "type":"subtitle",
-      "content": "post mortem..."
-    },
-    {
-      "type": "paragraph",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis felis fermentum, efficitur tortor non, vulputate turpis. Integer enim ex, sodales eu semper eget, dictum at mi. Maecenas tincidunt rutrum augue, sed congue lorem rhoncus a. Etiam commodo massa non erat interdum eleifend. Sed eget est posuere ex sollicitudin fringilla ut a turpis. In sagittis maximus viverra. Suspendisse facilisis eget tortor sed suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi justo, luctus in purus sagittis, efficitur volutpat neque. Aenean ante ligula, faucibus et turpis quis, pretium commodo justo. Integer a dolor ac urna efficitur tincidunt vel a lacus. Etiam in orci eu velit viverra porttitor. Nam cursus nibh quam. Proin ullamcorper pharetra viverra. Nulla faucibus venenatis tristique. Morbi viverra, enim vel pulvinar tempus, massa leo pulvinar massa, et aliquam mauris quam a sapien."
+      "content": "Alt Ctrl GDC Finalist"
     },
     {
       "type": "image",
-      "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
+      "content": "/assets/redline/laurel.png",
+      "alt": "Finalist award alt.ctrl.GDC"
     },
     {
-      "type":"head",
-      "content": "Game Name!"
+      "type": "paragraph",
+      "content": "Because Redline was accepted as a finalist for alt.ctrl, I had the opportunity to travel to San Francisco and display the game at GDC! Which also meant a huge deadline that had to be met. I planned Redline's development to make sure it was ready on time, setting extra time aside for things we cannot account for. One such event is having a brand new Flex Controller system come in 2 weeks before GDC which worked completely differently, which lead to a full refactor of the controller code to make sure it would be able to work."
+    },
+    {
+      "type": "image",
+      "content": "/assets/redline/gdcphoto.jpg",
+      "alt": "Photo with me(left) at our Redline booth at alt.ctrl.GDC 2024."
+    },
+    {
+      "type":"subtitle",
+      "content": "Local Multiplayer"
+    },
+    {
+      "type": "paragraph",
+      "content": "Redline was my first project at Limbitless Solutions. It began as a fully singleplayer experience, controlled with touchscreen and a custom muscle reading electromyographic flex controller. We felt it needed more to be considered for alt.ctrl, so we decided to pivot the game into a 4 player local VS game in under 2 weeks to meet the submission deadline. Expanding the player count itself, while intrusive, was not too difficult. Player code was very contained, leveraging Unity's Input System. I had challenges deciding how player controller assigning would work, as unlike most games, this game can be controlled by 2 distinct bluetooth controllers in a pair. The gameplay also had to be completely rethought for multiplayer, adding in player collisions, a truck system, and other features to create a dynamic re-playable game."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/3PlayerGameplay.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "This game's ultimate goal was training, so making it re-playable was essential in encouraging patients to actively work out their muscles. Multiplayer gameplay adds a unique competitive twist that can keep gameplay fresh by adding a social aspect. Another essential aspect is minimizing downtime. In Redline, if you are knocked out early, you can still participate in the game, taking control of a reticle, and flexing to launch trucks at the remaining players. This means you are always building strength, and participating in the fun, even if you are having a bad game."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/trucks.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "Custom Flex Controller"
+    },
+    {
+      "type": "paragraph",
+      "content": "When switching the game from single player to multiplayer, one major issue were the Flex Controllers. They were almost completely undocumented, running off half a decade old code, and could only support one connection at a time. I completely refactored how the controllers work with Unity, creating a more concise and usable system, as well as fully documenting how they work to allow the new system to be expanded in the future. I integrated the custom controllers seamlessly into Unity, making them an option in the Engine itself, allowing future developers to not have to worry about how the controller works itself to be able to make projects."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/InputSystem.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "IK animation"
+    },
+    {
+      "type": "paragraph",
+      "content": "To support the dynamic gameplay, I decided to go the procedural route with animations, creating a Rig from the 2D character and using IK to implement simple and expandable animations. In essence, I created one animation system that controlled leaning based off speed, which could be reused with minimal work on new bike models by updating IK targets."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/IK.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "Environment Transitions"
+    },
+    {
+      "type": "paragraph",
+      "content": "To help keep gameplay dynamic, I worked with the artists to allow for the scenery to change throughout one round. I created a day/night system that makes the road harder to see, forcing you to rely on your headlights. Below is footage from one the day/night cycle was first implemented."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/dayNightRecording.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "Then, with artists on the team, we created a new environment system that allowed for seamless transitions between zones. To do this, I created a tunnel that is a created at a certain length at runtime, then when an environment transition is needed, the tunnel moves across the screen, not impeding the gameplay but blocking the background long enough for a seamless transition."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/TunnelSpawn.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/TunnelTransition.webm"
     }
   ]
 }

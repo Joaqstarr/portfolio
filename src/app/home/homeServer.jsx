@@ -38,8 +38,7 @@ export async function  fetchProjects () {
     const data = await res.json();
     const files = data.files.files;
 
-
-    return await Promise.all(
+    const filesReceived = await Promise.all(
         files.map(async (file) => {
             //console.log("loading: " + file)
             const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,file));
@@ -49,4 +48,6 @@ export async function  fetchProjects () {
             return res.json();
         })
     );
+
+    return filesReceived.sort((a, b) => a.order - b.order);
 }

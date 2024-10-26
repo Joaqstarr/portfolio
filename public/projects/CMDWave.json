@@ -1,4 +1,5 @@
 ﻿{
+  "order": "1",
   "name": "CMD: Wave",
   "tags": ["Unity", "C#"],
   "extraInfo": "Director, lead programmer, artist. <br> Created in 1 month for Metroidvania Month 23.",
@@ -7,6 +8,7 @@
   "thumbnail": "assets/cmdwave/banner.png",
   "backgroundColor": "#00140b",
   "highlightColor": "#97dcc0",
+
   "elements": [
     {
       "type": "paragraph",

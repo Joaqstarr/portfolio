@@ -4,14 +4,16 @@ import PageClient from "./pageClient";
 
 export async function ParseJson(slug){
   try{
-  const response = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,'/projects/' + slug +'.json'));
-  if(!response.ok) throw new Error('Failed to fetch JSON');
+    const filePath = path.join(process.env.NEXT_PUBLIC_API_URL,'/projects/' + slug +'.json');
+    const response = await fetch(filePath);
 
-  const data = await response.json();
-  return data;
-}catch(error){
-  console.error("Error Fetching JSON: ", error);
-}
+    if(!response.ok) throw new Error('Failed to fetch JSON');
+    const data = await response.json();
+
+    return data;
+  }catch(error){
+    console.error("Error Fetching JSON: ", error);
+  }
 
 }
 
