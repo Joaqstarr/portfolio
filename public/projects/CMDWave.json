@@ -20,7 +20,7 @@
     },
     {
       "type": "paragraph",
-      "content": "To prevent the player from seeing the entire game world before exploring, I created a fog of war system that clears up as the player advances. To achieve this I store the fog as an image, changing the alpha of pixels as the player explores. This is done in a small circular radius around the player, and in the players \"radar\" vision cone."
+      "content": "As a Metroidvania, CMD: Wave is a game about exploring the unknown. To prevent the player from seeing the entire game world before exploring, I created a fog of war system that obscures the view of the game world until the player has explored the area. To achieve this I store the fog as an image, changing the alpha of pixels as the player explores. This is done in a small circular radius around the player, and in the players \"radar\" vision cone."
     },
     {
     "type": "video",

@@ -1,29 +1,38 @@
 ﻿{
   "order": "4",
   "name": "Slice of Hell",
-  "tags": ["Unity", "C#", "Postgres", "Supabase"],
-  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. <bcr>Climb a mountain by building structures in a persistent environment.",
+  "tags": ["Unity", "C#"],
+  "extraInfo": "Programmer, designer.",
+  "thumbnail": "assets/sliceofhell/banner.png",
+  "itch": "https://joaqstarr.itch.io/slice-of-hell",
+  "github": "https://github.com/Joaqstarr/SLICE-OF-HELL",
+  "backgroundColor": "#fad605",
+  "highlightColor": "#fad605",
   "elements": [
     {
-      "type": "carousel",
-      "content": ["https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/1280x1280/products/27436/18510/Game-GameCube-Zelda4TwiPrin-2__84662.1712937584.jpg?c=2",
-      "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"]
-    },
-    {
-      "type":"head",
-      "content": "Game Name!"
-    },
-    {
-      "type":"subtitle",
-      "content": "post mortem..."
+      "type": "time",
+      "content": "~16 hours"
     },
     {
       "type": "paragraph",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis felis fermentum, efficitur tortor non, vulputate turpis. Integer enim ex, sodales eu semper eget, dictum at mi. Maecenas tincidunt rutrum augue, sed congue lorem rhoncus a. Etiam commodo massa non erat interdum eleifend. Sed eget est posuere ex sollicitudin fringilla ut a turpis. In sagittis maximus viverra. Suspendisse facilisis eget tortor sed suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi justo, luctus in purus sagittis, efficitur volutpat neque. Aenean ante ligula, faucibus et turpis quis, pretium commodo justo. Integer a dolor ac urna efficitur tincidunt vel a lacus. Etiam in orci eu velit viverra porttitor. Nam cursus nibh quam. Proin ullamcorper pharetra viverra. Nulla faucibus venenatis tristique. Morbi viverra, enim vel pulvinar tempus, massa leo pulvinar massa, et aliquam mauris quam a sapien."
+      "content": "Created for the Game Dev Knights Arcade Jam. Designed to be played on an arcade cabinet. The movement of the knife is meant to match up with a normal arcade joystick. The game is playable on the UCF downtown campus arcade machines."
     },
     {
-      "type": "image",
-      "content": "https://www.nintendo.com/eu/media/images/11_square_images/games_18/nintendo_switch_5/1x1_NSwitch_TloZTearsOfTheKingdom_BASE_image380w.jpg"
+      "type":"subtitle",
+      "content": "Pizza Seperation"
+    },
+    {
+      "type": "paragraph",
+      "content": "To create the pizza slicing mechanic, the pie is made up of 8 micro slices broken up into macro slices. When you make a cut, the system finds which macro slices are being touched by the cut, and then splits their children micro slices into the appropriate number of macro slices. If you cut a micro slice in half, all the slices to the left of the cut will go in one macro, and to the right in another. I then get the average angle of every micro slice contained, and move the macro slice a certain distance away from the center at that angle. "
+    },
+    {
+      "type": "paragraph",
+      "content": "This gives me the behavior of the pizza parts splitting apart. Afterwards, I add a nice tweening function to the movement for polish. Below you can see the The slicing in action, with a red line drawn from the center to the calculated position. The angle of the line is determined by the angle of each micro slice contained by the portion."
+    },
+
+    {
+      "type": "video",
+      "content": "/assets/sliceofhell/sliceSeperation.webm"
     }
   ]
 }
