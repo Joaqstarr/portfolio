@@ -12,7 +12,11 @@
   "elements": [
     {
       "type": "paragraph",
-      "content": "Created in 1 month for the Metroidvania Month 23 Game Jam with a 4 person team. <br><br>I was the lead programmer and artist/tech artist."
+      "content": "Created in 1 month for the Metroidvania Month 23 Game Jam with a 4 person team. I was the lead programmer and artist/tech artist."
+    },
+    {
+      "type": "paragraph",
+      "content": "CMD: Wave is a Atmospheric Underwater Metroidvania where you explore a deep cave system while interfacing with your submarine through a computer terminal."
     },
     {
       "type": "subtitle",
