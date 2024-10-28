@@ -43,6 +43,7 @@ export function VideoBackground(props) {
                 onEnded={handleVideoEnd}
                 autoPlay
                 muted
+                playsInline
                 loop={false} // To switch to the next video on end
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
