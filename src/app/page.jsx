@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
             description:'Game Programming Portfolio',
             images: [
                 {
-                    url: 'assets/redline/gdcphoto.jpg',
+                    url: 'assets/meta.jpg',
                     width: 768,
-                    height: 512,
+                    height: 363,
                     alt: 'Game Programming Portfolio',
                 },
             ],
