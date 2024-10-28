@@ -43,7 +43,7 @@ export default function PortfolioListBlock(params) {
     }
 
     return (
-        <div className="group overflow-hidden cursor-pointer shadow-2xl hover:shadow-[5]xl hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
+        <div className="group overflow-hidden cursor-pointer shadow-2xl hover:shadow-[5]xl lg:hover:border-8 border-amber-800 rounded-xl grow shrink w-full lg:w-1/3 h-52 flex flex-col lg:flex-row justify-between
         bg-gradient-to-r from-cyan-500 to-blue-500 ease-in-out duration-150 lg:hover:w-1/2
         "
         style={thumbnailStyling} onClick={handleClick}>
