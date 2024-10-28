@@ -1,31 +1,32 @@
 ﻿const fs = require('fs');
 const path = require('path');
 
-const cacheProjects = () => {
+const cachePaths = (fileType, searchPath, webPath, outputFileName) => {
     try {
 
 
-        const projectsDirectory = path.join(process.cwd(), 'public/projects');
+        const projectsDirectory = path.join(process.cwd(), searchPath);
         const filenames = fs.readdirSync(projectsDirectory);
-        const jsonFiles = filenames.filter((file) => file.endsWith('.json'));
+        const jsonFiles = filenames.filter((file) => file.endsWith(fileType));
 
         
 
         // Prepare the paths
-        const filePaths = jsonFiles.map((file) => `/projects/${file}`);
+        const filePaths = jsonFiles.map((file) => webPath+file);
 
 
         // Save to a cache file
-        const cacheFilePath = path.join(process.cwd(), 'public/projCache.json');
+        const cacheFilePath = path.join(process.cwd(), 'public/' + outputFileName);
         fs.writeFileSync(cacheFilePath, JSON.stringify({files: filePaths}, null, 2));
 
-        console.log('Project paths cached successfully!');
+        console.log(outputFileName +' cached successfully!');
     }
     catch(error){
-        console.error(`Error creating projects cache: ${error}`);
+        console.error(`Error creating ${outputFileName + ": " + error}`);
     }
 };
 
 
 
-cacheProjects();
+cachePaths('.json','public/projects', `/projects/`, `projCache.json`);
+cachePaths('.webm','public/videos', `/videos/`, `vidCache.json`);
