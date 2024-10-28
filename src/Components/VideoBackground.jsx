@@ -38,14 +38,13 @@ export function VideoBackground(props) {
         {videos.length > 0 && (
             <video
                 ref={videoRef}
-                key={videos.at(currentVideo)} // Key change triggers reload for each video
                 src={videos.at(currentVideo)}
                 onEnded={handleVideoEnd}
                 autoPlay
                 muted
                 playsInline
-
-                loop // To switch to the next video on end
+                poster="/assets/poster.jpg"
+                loop={false} // To switch to the next video on end
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
 
