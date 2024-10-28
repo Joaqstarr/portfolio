@@ -29,4 +29,5 @@ const cachePaths = (fileType, searchPath, webPath, outputFileName) => {
 
 
 cachePaths('.json','public/projects', `/projects/`, `projCache.json`);
-cachePaths('.webm','public/videos', `/videos/`, `vidCache.json`);
+cachePaths('.webm','public/videos', `/videos/`, `webmCache.json`);
+cachePaths('.mp4','public/videos', `/videos/`, `mp4Cache.json`);

@@ -3,6 +3,8 @@
 
 export function VideoBackground(props) {
     const [videos, setVideos] = useState([]);
+    const [mp4Videos, setmp4Videos] = useState([]);
+
     const [currentVideo, setCurrentVideo] = useState(0);
     const videoRef = useRef(null);
 
@@ -11,9 +13,10 @@ export function VideoBackground(props) {
         const fetchVideos = async () => {
             const response = await fetch('/api/videos');
             const videoFiles = await response.json();
-            console.log("poo: " + JSON.stringify(videoFiles.files.files));
+            console.log("poo: " + JSON.stringify(videoFiles.mp4.files));
 
-            setVideos(videoFiles.files.files);
+            setVideos(videoFiles.webm.files);
+            setmp4Videos(videoFiles.mp4.files);
         };
 
         fetchVideos();
@@ -53,7 +56,11 @@ export function VideoBackground(props) {
                 poster="/assets/poster.jpg"
                 loop={false} // To switch to the next video on end
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            />
+            >
+                <source src={mp4Videos.at(currentVideo)} type="video/mp4"/>
+                <source src={videos.at(currentVideo)} type="video/webm"/>
+
+            </video>
 
         )}
         {props.children}

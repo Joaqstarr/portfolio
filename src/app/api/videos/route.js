@@ -2,19 +2,24 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const cacheFilePath = path.join(process.env.NEXT_PUBLIC_API_URL, '/vidCache.json');
+    const webmFilePath = path.join(process.env.NEXT_PUBLIC_API_URL, '/webmCache.json');
+    const mp4FilePath = path.join(process.env.NEXT_PUBLIC_API_URL, '/mp4Cache.json');
 
     try {
 
 
         // Read the cached JSON file
-        const cacheData = await fetch(cacheFilePath);
-        const files = await cacheData.json();
+        const webmData = await fetch(webmFilePath);
+        const mp4Data = await fetch(mp4FilePath);
+
+        const webm = await webmData.json();
+        const mp4 = await mp4Data.json();
 
         //console.log("path: " + cacheFilePath + " files: " + JSON.stringify(cacheData));
         // Return the list of file URLs
         return NextResponse.json({
-            files
+            webm: webm,
+            mp4: mp4
         });
     }catch(error){
 
