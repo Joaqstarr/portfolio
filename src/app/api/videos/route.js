@@ -23,7 +23,7 @@ export async function GET() {
         });
     }catch(error){
 
-        console.error(`Error fetching JSON file: ${cacheFilePath}`, error);
+        console.error(`Error fetching JSON file: ${webmFilePath} or ${mp4FilePath}`, error);
         return NextResponse.json({ error: 'Failed to fetch project files' }, { status: 500 });
     }
 }
