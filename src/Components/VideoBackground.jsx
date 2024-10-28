@@ -20,14 +20,21 @@ export function VideoBackground(props) {
     }, []);
 
     useEffect(() => {
-        setCurrentVideo(getRandomArbitrary(0, videos.length-1))
+        setCurrentVideo(getRandomArbitrary(0, videos.length-1));
+
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+        }
     }, [videos]);
+
     const handleVideoEnd = () => {
         setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length); // Loop back to the first video after the last one
     };
 
     useEffect(() => {
         if (videoRef.current) {
+            videoRef.current.currentTime = 0;
             videoRef.current.play();
         }
     }, [currentVideo]);
