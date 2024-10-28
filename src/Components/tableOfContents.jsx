@@ -3,13 +3,12 @@
 export default function TableOfContents(props) {
 
     return (<nav aria-label="Table of contents" className="sticky overflow-auto ">
-        <h3 className="font-bold text-lg">Table of Contents</h3>
         {(props.headingData.length > 0 ) &&
-            (<Headings headings={props.headingData}/>)}
+            (<Headings headings={props.headingData} enabled={props.enabled}/>)}
     </nav>);
 }
 
-function Headings({headings}){
+function Headings({headings, enabled}){
     const [headingFiltered, setHeadingFiltered] = useState([]);
 
     useEffect(()=>{
@@ -21,6 +20,8 @@ function Headings({headings}){
 
     const handleLinkClick = (e, id) => {
         e.preventDefault();
+
+        if(!enabled) return;
         document.querySelector(`#${id}`).scrollIntoView({
             behavior: "smooth"
         });
@@ -33,7 +34,7 @@ function Headings({headings}){
             <li key={heading.id}>
                 <a href={`#${heading.id}`} onClick={(e) => {
                     handleLinkClick(e, heading.id)
-                }}>{heading.title}</a>
+                }} className={`${enabled ? `` : `cursor-default`}`}>{heading.title}</a>
             </li>
         ))}
     </ul>)
