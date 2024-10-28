@@ -82,7 +82,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Originally, when adding the ability to drop rooms again, I began working on a system that determined which rooms were had no rooms depending on them, essentially only allowing you to drop the \"leaves\" of graph. I realized this would likely be overkill as I wouldn't want the player to deal with such a limitation. Instead, if a room is being depended on, it becomes a hallway, allowing for the player to still traverse the entire sub."
+      "content": "Originally, when adding the ability to drop rooms again, I began working on a system that determined which rooms had no rooms depending on them, essentially only allowing you to drop the \"leaves\" of graph. I realized this would likely be overkill as I wouldn't want the player to deal with such a limitation. Instead, if a room is being depended on, it becomes a hallway, allowing for the player to still traverse the entire sub."
     },
     {
       "type": "video",
