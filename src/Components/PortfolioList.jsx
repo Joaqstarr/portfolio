@@ -17,7 +17,7 @@ export default function PortfolioList(params) {
     }, []);
 
     return (
-        <div className="flex flex-col  w-full flex-nowrap gap-4 min-h-screen p-8">
+        <div className="flex flex-col  w-full flex-nowrap gap-4 p-8 pb-16">
             {groupedItems.map((pair, idx) => (
                 <PortfolioListRow key={idx}>
                     {pair.map((item, subIdx) => (

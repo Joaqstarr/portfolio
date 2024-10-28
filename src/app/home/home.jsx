@@ -5,6 +5,7 @@ import {loadJSONFiles, fetchProjects} from "./homeServer";
 import TitleBar from "../../Components/TitleBar";
 import PortfolioList from "../../Components/PortfolioList";
 import {useState, useEffect } from "react";
+import AboutMe from "../../Components/AboutMe";
 
 export default function Home() {
     const [projects, setProjects] = useState([]);
@@ -49,19 +50,21 @@ export default function Home() {
             <TitleBar/>
             {/**/}
 
-            <div className="g-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient min-h-screen">
+            <div className="bg-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient">
 
                 <div className="ease-in duration-200 md:w-2/3 m-auto backdrop-blur-lg">
                     <PortfolioList projects={projects}/>
 
                 </div>
             </div>
+            <AboutMe>
 
+            </AboutMe>
 
-
+            <div className="bg-gray-400 w-screen min-h-56">
+            </div>
 
         </div>
     )
 }
 
-//bg-gradient-to-bl from-violet-900 to-cyan-400
