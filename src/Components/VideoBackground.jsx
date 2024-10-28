@@ -53,6 +53,7 @@ export function VideoBackground(props) {
                 autoPlay
                 muted
                 playsInline
+                preload="auto"
                 poster="/assets/poster.jpg"
                 loop={false} // To switch to the next video on end
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
