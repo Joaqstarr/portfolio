@@ -13,8 +13,8 @@
                         <p className="text-blue-100 max-w-screen-sm mb-4 text-xl italic">Hello!</p>
                         <Paragraph>I am a junior Digital Media/Game Design Major at the University of Central Florida
                             minoring in Computer Science. I have loved programming and developing games ever since I was
-                            10 years old, and I don't plan on stopping soon! I love solving complex problems through code
-                            in readable and efficient ways. I have experience in both Unity, and Unreal engine.</Paragraph>
+                            10 years old and I don't plan on stopping soon! I love solving complex problems through code
+                            in readable and efficient ways. I have experience in both Unity and Unreal engine.</Paragraph>
                         <Paragraph>I am also the president of the Game Dev Knights, the game
                             development club at UCF, where I educate and help people get started in Game
                             Development. My favorite game series is The Legend of Zelda, but I play pretty much any game
@@ -24,8 +24,6 @@
                             <IconButton link={itchLink} icon="fa-brands fa-itch-io" text="Itch"/>
                             <IconButton link={resumeLink} icon="fa-file" text="Resume"/>
                             <IconButton link={emailLink} icon="fa-envelope" text="Email"/>
-
-
 
                         </div>
                     </div>
