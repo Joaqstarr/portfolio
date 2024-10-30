@@ -60,8 +60,6 @@ export default function Home() {
             <AboutMe/>
 
 
-            <div className="bg-gray-400 w-screen min-h-56">
-            </div>
 
         </div>
     )

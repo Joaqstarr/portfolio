@@ -1,5 +1,5 @@
 ﻿export default function AboutMe(props) {
-    const resumeLink ="";
+    const resumeLink ="https://docs.google.com/document/d/1tFriWYby8soySQQZA-mVENlrieg_iO-XsoabbA5DqhM/edit?usp=sharing";
     const emailLink ="mailto:joaquin@royerdesign.com";
     const githubLink ="https://github.com/Joaqstarr";
     const itchLink ="https://joaqstarr.itch.io/";
@@ -38,16 +38,16 @@
 
                 </div>
             </div>
-
+            <div className="h-24"></div>
         </div>
     )
 }
 
 function IconButton({link, icon, text}){
     return (
-        <a href={link} target="_blank" className="h-min text-blue-100 flex flex-col justify-center items-center">
+        <a href={link} target="_blank" className="h-min text-blue-100 flex flex-col justify-center items-center hover:animate-bounce cursor-pointer">
             <i aria-hidden="true" className={`fa-solid text-3xl ${icon}`}/>
-            <label>{text}</label>
+            <label className="cursor-pointer">{text}</label>
         </a>
     )
 }

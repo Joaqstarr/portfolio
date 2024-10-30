@@ -9,3 +9,36 @@
 .text-shadow-lg {
     text-shadow: 5px 5px 9px rgba(0, 0, 0, 0.8), -2px -2px 4px rgba(0, 0, 0, 0.8);
 }
+
+
+.ramabhadra-regular {
+    font-family: "Ramabhadra", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+.m-plus-1-regular {
+    font-family: "M PLUS 1", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1px;
+
+}
+
+.lexend-deca-regular {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1px;
+}
+.lexend-deca-regular {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1px;
+}

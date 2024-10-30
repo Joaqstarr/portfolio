@@ -5,7 +5,6 @@ import React, {useState, useEffect, useRef} from "react";
 import "../../../globals.css"
 import Header from "../../../Components/BlogParts/Header";
 import TableOfContents from "../../../Components/tableOfContents";
-import {ParseJson} from "./page";
 import {CreateIdName} from "../../../Components/BlogParts/Subtitle";
 
 
@@ -13,23 +12,12 @@ import {CreateIdName} from "../../../Components/BlogParts/Subtitle";
 export default function PageClient(params){
     const [project, setProjects] = useState([]);
     const [headers, setHeaders] = useState([]);
-    const [slug, setSlug] = useState('');
 
 
     useEffect(()=>{
         setProjects(params.project)
     }, [params.project]);
-/*
-    useEffect( () => {
 
-
-        setSlug(params.params.slug);
-
-        ParseJson(params.params.slug).then((res) =>{
-           setProjects(res);
-        });
-
-    }, [params.params.slug]);*/
 
     useEffect(()=>{
 
@@ -69,7 +57,7 @@ export default function PageClient(params){
                 }
             }
         `}</style>
-    <div className="bg-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient min-h-screen p-6 flex-row flex justify-center">
+    <div className="bg-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient min-h-screen p-6 flex-row flex justify-center" >
 
         <div className="ease-in duration-200 md:w-2/3 m-auto max-w-4xl">
 
