@@ -6,8 +6,8 @@
 
     return(
         <div className="bg-gray-800 w-screen min-h-56">
-            <div className="md:w-2/3 m-auto p-8">
-                <div className="flex flex-col-reverse md:flex-row gap-10">
+            <div className="md:w-2/3 m-auto p-8 ">
+                <div className="flex flex-col-reverse md:flex-row gap-10 justify-around">
                     <div>
                         <h2 className="text-5xl font-bold text-blue-100 mb-7">About Me</h2>
                         <p className="text-blue-100 max-w-screen-sm mb-4 text-xl italic">Hello!</p>
