@@ -57,9 +57,8 @@ export default function Home() {
 
                 </div>
             </div>
-            <AboutMe>
+            <AboutMe/>
 
-            </AboutMe>
 
             <div className="bg-gray-400 w-screen min-h-56">
             </div>
