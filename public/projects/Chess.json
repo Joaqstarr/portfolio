@@ -1,0 +1,42 @@
+﻿{
+  "order": "3",
+  "name": "The Silent City",
+  "tags": ["Unity", "C#"],
+  "extraInfo": "Game Designer and Programmer. Made for Secret Santa Jam 2023 in ~20 days",
+  "itch": "https://joaqstarr.itch.io/the-silent-city",
+  "github": "https://github.com/Joaqstarr/The-Silent-City",
+  "thumbnail": "assets/silentCity/banner.png",
+  "backgroundColor": "#d25d85",
+  "highlightColor": "#1f1440",
+  "elements": [
+    {
+      "type": "paragraph",
+      "content": "Created for the 2023 Secret Santa Jam in about 20 days. I was the programmer and designer on the project, along with 1 composer, 1 artist, and 1 writer."
+    },
+    {
+      "type":"subtitle",
+      "content": "Battle System"
+    },
+    {
+      "type": "paragraph",
+      "content": "This game was interesting, as I've received a prompt as part of the Jam. One piece of it, was that the recipient really enjoyed singing. Also while working on the game, I had been practicing my piano. So from both those things, I had the idea for a musical combat system that encourages creating songs. Instead of a list of moves, you are given a music staff, and the ability to sing different rhythms. Each type of note has it's own ability."
+    },
+    {
+      "type": "image",
+      "content": "/assets/silentCity/notecheatsheet.jpg",
+      "alt": "Documents each type of note and their effect."
+    },
+    {
+      "type": "paragraph",
+      "content": "In practice this is pretty simple to implement, just with an array of note objects. When playing, the notes get added to the array. Then during playback, the playhead steps down each element of the array, applying each note's effect. "
+    },
+    {
+      "type": "video",
+      "content": "/assets/silentCity/noteMapSystem.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "By knowing the time each note has been pressed down, and the BPM of playback, the type of note can be found. This then gets translated into the effect and art that is displayed. The system even picks up Quarter dot and Half dot notes."
+    }
+  ]
+}
