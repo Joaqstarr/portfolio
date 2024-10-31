@@ -60,7 +60,7 @@ export default function PortfolioListBlock(params) {
             </div>
 
             <div className=" flex flex-col p-4 lg:pr-0  items-end w-full lg:w-fit lg:opacity-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent to-slate-600/50 to-30% group-hover:opacity-100 ease-in duration-200">
-                <p className=" w-full lg:max-w-72 text-slate-50 lg:w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300 " dangerouslySetInnerHTML={{__html:extraInfo}}></p>
+                <p className=" w-full lg:max-w-72 text-slate-50 lg:w-2/3 text-pretty lg:opacity-0 group-hover:opacity-100 ease-in-out duration-300 min-w-32 lg:mr-3 lg:text-end" dangerouslySetInnerHTML={{__html:extraInfo}}></p>
             </div>
         </div>
     )

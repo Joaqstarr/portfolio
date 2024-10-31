@@ -1,42 +1,50 @@
 ﻿{
-  "order": "3",
-  "name": "The Silent City",
-  "tags": ["Unity", "C#"],
-  "extraInfo": "Game Designer and Programmer. Made for Secret Santa Jam 2023 in ~20 days",
-  "itch": "https://joaqstarr.itch.io/the-silent-city",
-  "github": "https://github.com/Joaqstarr/The-Silent-City",
-  "thumbnail": "assets/silentCity/banner.png",
+  "order": "10",
+  "name": "Chess",
+  "tags": ["C++"],
+  "extraInfo": "Programmer",
+  "github": "https://github.com/Joaqstarr/Chess",
+  "thumbnail": "assets/chess/chess.jpg",
   "backgroundColor": "#d25d85",
   "highlightColor": "#1f1440",
   "elements": [
     {
       "type": "paragraph",
-      "content": "Created for the 2023 Secret Santa Jam in about 20 days. I was the programmer and designer on the project, along with 1 composer, 1 artist, and 1 writer."
+      "content": "My first C++ project. After learning some of the basics of c++, and with some Unreal experience under my belt, I decided to work on recreating the classic game Chess."
+    },
+    {
+      "type":"video",
+      "content": "/assets/chess/gameplay.webm"
     },
     {
       "type":"subtitle",
-      "content": "Battle System"
+      "content": "Rendering"
     },
     {
       "type": "paragraph",
-      "content": "This game was interesting, as I've received a prompt as part of the Jam. One piece of it, was that the recipient really enjoyed singing. Also while working on the game, I had been practicing my piano. So from both those things, I had the idea for a musical combat system that encourages creating songs. Instead of a list of moves, you are given a music staff, and the ability to sing different rhythms. Each type of note has it's own ability."
+      "content": "To render the game, I decided it would be fun to skip the terminal and attempt to create a visual interface. To do this, I used Simple and Fast Multimedia Library(SFML). I created a rendering system that allows the entire game to be drawn in 1 call. To do this, it creates the appropriate geometry depending on the game state, setting each vertex's UV coordinate accordingly. Using only one texture(below) allows me to draw the entire game board and pieces in 1 call. In something like chess, with a limited amount of items on screen at once, I recognize that this optimization may not be the most important. However, I doing things this way let me practice architecting a system that allows for me to render as many quads as I need in 1 draw call. "
     },
     {
       "type": "image",
-      "content": "/assets/silentCity/notecheatsheet.jpg",
-      "alt": "Documents each type of note and their effect."
+      "content": "/assets/chess/assets.png",
+      "alt": "My texture map containing everything needed for gameplay."
+    },
+    {
+      "type":"subtitle",
+      "content": "Delegates"
     },
     {
       "type": "paragraph",
-      "content": "In practice this is pretty simple to implement, just with an array of note objects. When playing, the notes get added to the array. Then during playback, the playhead steps down each element of the array, applying each note's effect. "
+      "content": "When picking up C++, I was initially disappointed to find out there was no delegate system like there is in C#. I love the Observer pattern, and had game logic I did not want tangled together. Instead of biting the bullet, I decided to create a static library with essential delegate functionality I use often in C#. To do this I took advantage of variadic templates to allow me to create delegates with various parameters."
     },
     {
-      "type": "video",
-      "content": "/assets/silentCity/noteMapSystem.webm"
+      "type": "code",
+      "content": "#pragma once\\n#include <vector>\\n#include <functional>\\n#include <utility>\\n\\nnamespace Events {\\n\\n    template<class... params>\\n    class Delegate {\\n\\n    public:\\n        using CallbackId = int;\\n\\n        void Invoke(params...args)\\n        {\\n            for (unsigned int i = 0; i < callbacks.size(); ++i) {\\n                callbacks[i].second(args...);\\n            }\\n        }\\n        void operator()(params...args)\\n        {\\n            Invoke(args...);\\n        }\\n\\n        CallbackId Subscribe(std::function<void(params...)> callback)\\n        {\\n            callbacks.emplace_back(++nextId, std::move(callback));\\n            return nextId;\\n\\n        }\\n\\n        CallbackId operator+=(std::function<void(params...)> callback)\\n        {\\n            return Subscribe(callback);\\n        }\\n\\n        void Unsubscribe(CallbackId id)\\n        {\\n            callbacks.erase(\\n                std::remove_if(callbacks.begin(), callbacks.end(),\\n                    [id](const std::pair<CallbackId, std::function<void(params...)>>& p) {\\n                        return p.first == id;\\n                    }),\\n                callbacks.end()\\n            );\\n        }\\n\\n        void operator-=(CallbackId id)\\n        {\\n            Unsubscribe(id);\\n        }\\n\\n    private:\\n        std::vector<std::pair<CallbackId, std::function<void(params...)>>> callbacks;\\n\\n        CallbackId nextId = 0;\\n\\n    };\\n}",
+      "language": "c++"
     },
     {
       "type": "paragraph",
-      "content": "By knowing the time each note has been pressed down, and the BPM of playback, the type of note can be found. This then gets translated into the effect and art that is displayed. The system even picks up Quarter dot and Half dot notes."
+      "content": "I made use of operator overloading to bring the end experience as close to C# delegates as I could. When I switched back to chess, I was pleased to see my work pay off. One place I used this system is for mouse clicks, allowing for buttons and pieces to listen for mouse clicks. In the future I would like to go back and update how I am handling unsubscribing, as how it is now is not ideal. I made sure to create this system in a static library, allowing me to reuse it in future projects as needed."
     }
   ]
 }

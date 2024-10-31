@@ -190,7 +190,7 @@ function SocialButton({link, icon}){
 function BackButton(){
     return (
     <div>
-        <a href={process.env.NEXT_PUBLIC_API_URL} className="w-full h-full cursor-pointer text-slate-600">
+        <a href={process.env.NEXT_PUBLIC_API_URL} className="w-full h-full cursor-pointer text-slate-600 z-30">
             <i aria-hidden className="fa-solid fa-rotate-left"></i> back
         </a>
     </div>);

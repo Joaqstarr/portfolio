@@ -15,7 +15,7 @@
             />
 
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             <link
                 href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=M+PLUS+1:wght@100..900&family=Ramabhadra&display=swap"
                 rel="stylesheet"/>

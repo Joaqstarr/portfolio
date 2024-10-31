@@ -13,7 +13,6 @@ export function VideoBackground(props) {
         const fetchVideos = async () => {
             const response = await fetch('/api/videos');
             const videoFiles = await response.json();
-            console.log("poo: " + JSON.stringify(videoFiles.mp4.files));
 
             setVideos(videoFiles.webm.files);
             setmp4Videos(videoFiles.mp4.files);
@@ -27,7 +26,6 @@ export function VideoBackground(props) {
 
         if (videoRef.current) {
             videoRef.current.currentTime = 0;
-            videoRef.current.play();
         }
     }, [videos]);
 
