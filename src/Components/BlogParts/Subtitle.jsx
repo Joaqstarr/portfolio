@@ -7,7 +7,7 @@ export default function Subtitle(params) {
         setId(CreateIdName(params.element.content));
     }, [params.element.content]);
     return(
-        <h2 className="text-3xl font-bold mb-7 scroll-mt-48 lg:scroll-mt-5 " id={id}  dangerouslySetInnerHTML={{__html: params.element.content}}></h2>
+        <h2 className="text-3xl font-bold mb-7 scroll-mt-7 lg:scroll-mt-5 " id={id}  dangerouslySetInnerHTML={{__html: params.element.content}}></h2>
     )
 }
 
