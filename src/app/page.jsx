@@ -1,22 +1,21 @@
 ﻿import { ClientOnly } from './client'
 import "../globals.css"
+import {fetchProjects} from "./home/homeServer";
 /*export function generateStaticParams() {
     return [{ slug: [''] }]
 }*/
 
-export default function Page() {
+export default async function Page(props) {
 
-
+    const gamesList = await fetchProjects();
     return (
 
-        <ClientOnly />
+        <ClientOnly projects={gamesList}/>
 
 
     )
 }
 const fs = require('fs');
-
-
 
 export async function generateMetadata({ params }) {
 

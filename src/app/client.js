@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Home from "./home/home.jsx"
 import { useState, useEffect} from "react";
 
-export function ClientOnly() {
+export function ClientOnly({projects}) {
     const [isBrowser, setIsBrowser] = useState(false);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export function ClientOnly() {
     return (
 
         <BrowserRouter>
-            <Home />
+            <Home projects={projects} />
 
         </BrowserRouter>
 

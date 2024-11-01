@@ -7,13 +7,10 @@ import PortfolioList from "../../Components/PortfolioList";
 import {useState, useEffect } from "react";
 import AboutMe from "../../Components/AboutMe";
 
-export default function Home() {
-    const [projects, setProjects] = useState([]);
+export default function Home({projects}) {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        UpdateProjects();
-
         const handleScroll = () => {
             setScrollY(window.scrollY);
         };
@@ -24,12 +21,6 @@ export default function Home() {
         };
     }, []);
 
-    const  UpdateProjects = async () =>{
-        //const table = await GetAllProjectsFromTable();
-        const table = await fetchProjects();
-        //console.log(JSON.stringify(table));
-        setProjects(table)
-    }
 
     return (
 
