@@ -62,7 +62,7 @@ export default function PageClient(params){
         <div className="ease-in duration-200 md:w-2/3 m-auto max-w-4xl">
 
 
-            <div className="flex flex-col-reverse  lg:flex-row gap-5">
+            <div className="flex flex-col-reverse lg:items-start items-center lg:flex-row gap-5">
 
                 <div>
                     <BackButton/>
@@ -152,7 +152,7 @@ function TableOfContentsPane({headers}){
     }, [isOpen]);
     return (
         <div
-            className="lg:mt-20 w-auto text-nowrap sticky h-min top-8 bg-gray-100  p-4 pb-0 shadow-2xl rounded-2xl border-gray-200 border border-double "
+            className="lg:mt-20 w-auto text-nowrap bottom-5 lg:bottom-auto fixed lg:sticky h-min lg:top-8 bg-gray-100 p-4 pb-0 shadow-2xl rounded-2xl border-gray-200 border border-double "
             style={(headers.length <= 1) ? invis : {}}>
             <h3 className="font-bold text-lg">Table of Contents</h3>
             <div className="ease-in-out duration-150 transition-all" style={{height: height}}>
