@@ -32,16 +32,18 @@ export async function loadJSONFiles(directoryPath) {
 
 export async function  fetchProjects () {
     const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,'/api/projects'));
+
     if(!res.ok){
         throw new Error("Error fetching projects: " + res.statusText);
     }
     const data = await res.json();
     const files = data.files.files;
+    //console.log(JSON.stringify(data))
 
     const filesReceived = await Promise.all(
         files.map(async (file) => {
             //console.log("loading: " + file)
-            const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL,file));
+            const res = await fetch(path.join(process.env.NEXT_PUBLIC_API_URL, file));
             if (!res.ok) {
                 throw new Error(`Failed to fetch project: ${file}`);
             }

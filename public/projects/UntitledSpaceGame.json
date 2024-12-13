@@ -1,0 +1,63 @@
+﻿{
+  "order": "5",
+  "name": "Untitled Space Game",
+  "tags": ["Unreal", "C++", "GAS", "BP"],
+  "extraInfo": "Game Programmer. Currently in progress",
+  "github": "https://github.com/Joaqstarr/Space",
+  "thumbnail": "assets/space/banner.jpg",
+  "backgroundColor": "#d25d85",
+  "highlightColor": "#FFFFFF",
+  "elements": [
+    {
+      "type": "paragraph",
+      "content": "Unreal Engine Space game created to get more comfortable with the engine. "
+    },
+    {
+      "type":"subtitle",
+      "content": "Gravity System"
+    },
+    {
+      "type": "paragraph",
+      "content": "This game features a Mario Galaxy style gravity zone system. I am able to create individual gravity zones and assign them priorities. Any actor with a gravity component will keep track of which gravity zones its contained within in a priority queue. It then uses the gravity of the highest one, allowing me to have zones within zones without confusion over which one should be active."
+    },
+    {
+      "type": "image",
+      "content": "/assets/space/boxGravity.jpg",
+      "alt": "Overlapping box gravity zones."
+    },
+    {
+      "type": "image",
+      "content": "/assets/space/sphereGravity.jpg",
+      "alt": "Spherical gravity zone."
+    },
+    {
+      "type": "paragraph",
+      "content": "Pictured is the zones of influence for 2 types of gravity zones. The box gravity zone image has 2 overlapping zones with opposite gravities."
+    },
+    {
+      "type": "video",
+      "content": "/assets/space/gravity.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "Custom Motion Warping"
+    },
+    {
+      "type": "paragraph",
+      "content": "When I began working on the sword swing attack, I decided I wanted to use motion warping to dynamically adjust the root motion of the animation so it would hit targets that don't necessarily line up with the animation. After trying out Unreal Engine's built in solution, I found out it does not work with a normal pawn class. I created my own motion warping component. I based it off Unreal's own component, that way the workflow for implementing it as a designer would be similar. This involved creating a custom notify state class that allows manipulating properties of the warp in an animation montage."
+    },
+    {
+      "type": "image",
+      "content": "/assets/space/warpState.jpg",
+      "alt": "Warp state in anim notify editor, and details panel with settings."
+    },
+    {
+      "type": "paragraph",
+      "content": "So far, I have settings that allow you to preserve the original root motions amplitude, and an offset setting that lets you choose in a local space where the warp target should be at the end of a warp. I also have a toggle that allows you to choose if the direction should also be warped towards the target, and an easing curve that lets you choose exactly how the warp should be interpolated."
+    },
+    {
+      "type": "video",
+      "content": "/assets/space/warp.webm"
+    }
+  ]
+}

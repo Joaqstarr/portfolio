@@ -47,8 +47,7 @@ export default function PortfolioListBlock(params) {
         bg-gradient-to-r from-cyan-500 to-blue-500 ease-in-out duration-150 lg:hover:w-1/2
         "
         style={thumbnailStyling} onClick={handleClick}>
-
-            <div className="flex flex-col justify-end w-fit  p-4">
+            <div className="flex flex-col justify-end w-fit  p-4 group-hover:bg-gradient-to-r  group-hover:lg:bg-gradient-to-L to-transparent from-slate-600 ">
                 <p className="text-5xl text-slate-50 drop-shadow-2xl font-bold mb-3 lg:max-w-24">
                     {name}
                 </p>
