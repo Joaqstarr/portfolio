@@ -2,7 +2,7 @@
   "order": "2",
   "name": "Pinnacle",
   "tags": ["Unity", "C#", "PostgreSQL", "Supabase"],
-  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. Climb a mountain by building structures in a persistent environment.",
+  "extraInfo": "Director, Programmer, Artist. Created for GMTK Jam 2024. Climb a mountain, together.",
   "itch": "https://joaqstarr.itch.io/pinnacle",
   "github": "https://github.com/Joaqstarr/Pinnacle",
   "thumbnail": "assets/pinnacle/banner.jpg",
@@ -15,7 +15,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Created in 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer."
+      "content": "Created in 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer. In Pinnacle, players climb a massive mountain. They are able to build checkpoints and ziplines to assist with the climb. Anything they build appears in every other player's mountain in real time."
     },
     {
       "type":"subtitle",
