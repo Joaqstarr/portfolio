@@ -1,0 +1,35 @@
+﻿{
+  "order": "1.5",
+  "name": "Steel Dusk",
+  "tags": ["Unity", "C#"],
+  "extraInfo": "Director, lead programmer, animator, level designer.",
+  "itch": "https://joaqstarr.itch.io/steel-dusk",
+  "github": "https://github.com/Joaqstarr/SteelDusk",
+  "thumbnail": "assets/steeldusk/banner.jpg",
+  "backgroundColor": "#00140b",
+  "highlightColor": "#97dcc0",
+
+  "elements": [
+    {
+      "type": "paragraph",
+      "content": "Created in 3 weeks for Game Production class with a team of 6. 1 Dedicated 3D artist, 3 programmers and 2 designers. I was the lead programmer, animator, and a level designer on the project."
+    },
+    {
+      "type": "paragraph",
+      "content": "Steel Dusk is a post apocalyptic stealth game where the player must avoid killer robots to get to the shutdown switch."
+    },
+    {
+      "type": "subtitle",
+      "content": "AI System"
+    },
+    {
+      "type": "paragraph",
+      "content": "Steel Dusk required interaction between world elements, the player and multiple AI agents. To handle this, I utilized the event bus pattern to create a sense system. Anybody can send out sense triggers of particular types, which get sent out to every listener. To subscribe to a sense, you create an instance of a listener class that is designed to listen to the specific sense you would like. SenseListener is an abstract base class that has an abstract method that can be overriden to determine whether a sense can be heard. This can be a simple distance check, or something more complicated."
+    },
+    {
+      "type": "code",
+      "content": "namespace AI.Sensing\\n{\\n    public abstract class SenseListenerBase\\n    {\\n        private SenseNotificationContext.NotificationType NotificationType;\\n        \\n        public delegate void NotificationReceivedDelegate(SenseNotificationContext notification);\\n        public NotificationReceivedDelegate OnNotificationReceived;\\n        \\n        public SenseListenerBase(SenseNotificationContext.NotificationType type)\\n        {\\n            NotificationType = type;\\n\\n            SenseNotificationSubsystem.OnNotification += OnNotificationReceivedHandler;\\n            OnNotificationReceived = null;\\n        }\\n\\n        ~SenseListenerBase()\\n        {\\n            SenseNotificationSubsystem.OnNotification -= OnNotificationReceivedHandler;\\n        }\\n\\n        private void OnNotificationReceivedHandler(SenseNotificationContext notification)\\n        {\\n            if (notification.Type == NotificationType && IsNotificationInRange(notification))\\n            {\\n                OnNotificationReceived?.Invoke(notification);\\n            }\\n        }\\n\\n        protected abstract bool IsNotificationInRange(SenseNotificationContext notification);\\n        \\n        \\n        public static SenseListenerBase operator +(SenseListenerBase listener, NotificationReceivedDelegate handler)\\n        {\\n            listener.OnNotificationReceived += handler;\\n            return listener;\\n        }\\n\\n        // Overload - operator to remove a delegate\\n        public static SenseListenerBase operator -(SenseListenerBase listener, NotificationReceivedDelegate handler)\\n        {\\n            listener.OnNotificationReceived -= handler;\\n            return listener;\\n        }\\n    }\\n}",
+      "language": "C#"
+    }
+  ]
+}
