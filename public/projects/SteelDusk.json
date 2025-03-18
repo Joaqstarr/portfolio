@@ -24,12 +24,37 @@
     },
     {
       "type": "paragraph",
-      "content": "Steel Dusk required interaction between world elements, the player and multiple AI agents. To handle this, I utilized the event bus pattern to create a sense system. Anybody can send out sense triggers of particular types, which get sent out to every listener. To subscribe to a sense, you create an instance of a listener class that is designed to listen to the specific sense you would like. SenseListener is an abstract base class that has an abstract method that can be overriden to determine whether a sense can be heard. This can be a simple distance check, or something more complicated."
+      "content": "Steel Dusk required interaction between world elements, the player and multiple AI agents. To handle this, I utilized the event bus pattern to create a sense system. Anybody can send out sense triggers of particular types, which get sent out to every listener. To subscribe to a sense, you create an instance of a listener class that is designed to listen to the specific sense you would like. SenseListenerBase is an abstract base class that has an abstract method that can be overriden to determine whether a sense can be heard. This can be a simple distance check, or something more complicated."
     },
     {
       "type": "code",
       "content": "namespace AI.Sensing\\n{\\n    public abstract class SenseListenerBase\\n    {\\n        private SenseNotificationContext.NotificationType NotificationType;\\n        \\n        public delegate void NotificationReceivedDelegate(SenseNotificationContext notification);\\n        public NotificationReceivedDelegate OnNotificationReceived;\\n        \\n        public SenseListenerBase(SenseNotificationContext.NotificationType type)\\n        {\\n            NotificationType = type;\\n\\n            SenseNotificationSubsystem.OnNotification += OnNotificationReceivedHandler;\\n            OnNotificationReceived = null;\\n        }\\n\\n        ~SenseListenerBase()\\n        {\\n            SenseNotificationSubsystem.OnNotification -= OnNotificationReceivedHandler;\\n        }\\n\\n        private void OnNotificationReceivedHandler(SenseNotificationContext notification)\\n        {\\n            if (notification.Type == NotificationType && IsNotificationInRange(notification))\\n            {\\n                OnNotificationReceived?.Invoke(notification);\\n            }\\n        }\\n\\n        protected abstract bool IsNotificationInRange(SenseNotificationContext notification);\\n        }\\n}",
       "language": "C#"
+    },
+    {
+      "type": "paragraph",
+      "content": "This allows me to very quickly create decoupled interactions between gameplay events and AI reactions. For example, the AI does not ever know that it is looking at the player, it just sees a \"Sight Sense\" with a position as metadata. This made it very easy to create a new AI bot that can be used to distract, as it just emits the same \"Sight Sense.\""
+    },
+    {
+      "type": "subtitle",
+      "content": "Animation"
+    },
+    {
+      "type": "paragraph",
+      "content": "I implemented multiple character animations following Unity best practice. This includes setting them up as Humanoid Rigs. The game features multiple cutscenes that involve multiple characters interacting with each other and the level, all with root motion. "
+    },
+    {
+      "type": "video",
+      "content": "/assets/steeldusk/introanimation.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/steeldusk/loseAnimation.webm"
+    },
+    {
+      "type": "video",
+      "content": "/assets/steeldusk/winAnimation.webm"
     }
   ]
 }
+
