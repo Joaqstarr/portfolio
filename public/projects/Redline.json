@@ -1,15 +1,18 @@
 ﻿{
   "order": "0",
   "name": "Redline",
-  "tags": ["Unity", "C#", "Android", "BLE"],
-  "extraInfo": "Lead Developer + Programmer, Limbitless Solutions",
+  "tags": ["Unity", "C#", "Android", "BLE", "Input System"],
+  "extraInfo": "Lead Programmer, Limbitless Solutions",
   "thumbnail": "assets/redline/banner.jpg",
   "backgroundColor": "#452c49",
   "highlightColor": "#b82e0f",
   "elements": [
     {
-      "type": "time",
-      "content": "August 2023 - March 2024"
+      "type": "details",
+      "time": "August 2023 - May 2026",
+      "teamSize": "2",
+      "engine": "Unity 2021",
+      "role": "Lead Programmer"
     },
     {
       "type": "paragraph",

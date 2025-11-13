@@ -6,7 +6,6 @@ import { useState, useEffect} from "react";
 
 export function ClientOnly({projects}) {
     const [isBrowser, setIsBrowser] = useState(false);
-
     useEffect(() => {
         // Component is mounted, now it's safe to use `window` or `document`
         setIsBrowser(true);
@@ -17,7 +16,6 @@ export function ClientOnly({projects}) {
     }
 
     return (
-
         <BrowserRouter>
             <Home projects={projects} />
 

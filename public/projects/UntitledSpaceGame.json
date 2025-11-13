@@ -1,12 +1,13 @@
 ﻿{
   "order": "5",
   "name": "Untitled Space Game",
-  "tags": ["Unreal", "C++", "GAS", "BP"],
+  "tags": ["Unreal Engine 5", "C++", "GAS", "BP"],
   "extraInfo": "Game Programmer. Currently in progress",
   "github": "https://github.com/Joaqstarr/Space",
   "thumbnail": "assets/space/banner.jpg",
   "backgroundColor": "#d25d85",
   "highlightColor": "#FFFFFF",
+  "hidden": "true",
   "elements": [
     {
       "type": "paragraph",

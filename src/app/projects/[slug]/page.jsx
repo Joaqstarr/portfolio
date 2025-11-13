@@ -37,8 +37,7 @@ export async function generateStaticParams() {
 
 export default async function Page(params) {
 
-
-  const res = await ParseJson(params.params.slug);
+  const res = await ParseJson(await params.params.slug);
 
   return(
       <PageClient params={params.params} project={res}/>

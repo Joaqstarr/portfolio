@@ -1,0 +1,54 @@
+﻿{
+  "order": "0",
+  "name": "SORN",
+  "tags": ["Unreal Engine 5", "C++", "GAS", "BP"],
+  "extraInfo": "Lead Programmer",
+  "github": "https://github.com/Joaqstarr/SORN",
+  "thumbnail": "assets/sorn/banner.png",
+  "backgroundColor": "#5e3f19",
+  "highlightColor": "#ff910a",
+
+  "elements": [
+    {
+      "type": "video",
+      "content": "/assets/sorn/Sorngameplay-1.webm"
+    },
+    {
+      "type": "details",
+      "time": "August 2025 - May 2026",
+      "teamSize": "7",
+      "engine": "Unreal Engine 5.6.1",
+      "role": "Lead Programmer"
+    },
+    {
+      "type": "paragraph",
+      "content": "SORN is a fast-paced mecha-action game developed in Unreal Engine 5.6."
+    },
+    {
+      "type": "subtitle",
+      "content": "Mission Graph"
+    },
+    {
+      "type": "paragraph",
+      "content": "In SORN, the player primarily progresses through the game by completing mission content. To facilitate the development of missions, I created a mission system, leveraging Unreal's Editor Graph Tools. Missions are made up primarily of objective chains, objectives, conditions and actions."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/missiongraph.png",
+      "alt": "Screenshot depicting the mission graph editor."
+    },
+    {
+      "type": "paragraph",
+      "content": "Each objective has a condition and a set of actions. When an active objective's condition is evaluated to true, all actions are executed and the next objective is then activated. To allow for multiple conditions to be used on 1 objective, there are \"or\" and \"and\" nodes. Nodes can be selected to edit additional properties. The objective pictured below is configured to spawn a level instance on completion when the player enters a particular radius."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/infiltrateobjective.png",
+      "alt": "Screenshot depicting the settings available for an objective."
+    },
+    {
+      "type": "paragraph",
+      "content": "Often conditions and actions require a reference to objects in the level. To create these references, gameplay tags are used. A component that can be attached to an actor registers the actor with a particular gameplay tag. Multiple actors can be registered with the same tag if desired. Conditions, actions, and any other gameplay code can than query these tags to bind to actors in the level. Pictured below are the configurable settings of the <i>\"Enter Radius\"</i> condition. As pictured, the condition activates when the player enters within 2500cm of the actor registered with the <i>\"Directives.Missions.TheWall.EnterWall\"</i> tag. The condition also has configurable text to control it's UI representation."
+    }
+  ]
+}

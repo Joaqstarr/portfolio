@@ -1,7 +1,7 @@
 ﻿{
   "order": "1",
   "name": "CMD: Wave",
-  "tags": ["Unity", "C#"],
+  "tags": ["Unity", "C#", "Burst"],
   "extraInfo": "Director, lead programmer, artist. Created in 1 month for Metroidvania Month 23.",
   "itch": "https://joaqstarr.itch.io/cmd-wave",
   "github": "https://github.com/Joaqstarr/CMD-Wave",
@@ -10,6 +10,13 @@
   "highlightColor": "#97dcc0",
 
   "elements": [
+    {
+      "type": "details",
+      "time": "February 2023 - March 2023",
+      "teamSize": "4",
+      "engine": "Unity 2022",
+      "role": "Lead Programmer"
+    },
     {
       "type": "paragraph",
       "content": "Created in 1 month for the Metroidvania Month 23 Game Jam with a 4 person team. I was the lead programmer and artist/tech artist."

@@ -10,12 +10,15 @@
   "highlightColor": "#91847c",
   "elements": [
     {
-      "type": "time",
-      "content": "~28 Hours"
+      "type": "details",
+      "time": "August 16, 2024 - August 20, 2024",
+      "teamSize": "2",
+      "engine": "Unity 2022",
+      "role": "Lead Developer"
     },
     {
       "type": "paragraph",
-      "content": "Created in 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer. In Pinnacle, players climb a massive mountain. They are able to build checkpoints and ziplines to assist with the climb. Anything they build appears in every other player's mountain in real time."
+      "content": "Created over 96 hours for the GMTK Jam 2024. <br><br>I was the developer along with 1 composer. In Pinnacle, players climb a massive mountain. They are able to build checkpoints and ziplines to assist with the climb. Anything they build appears in every other player's mountain in real time."
     },
     {
       "type":"subtitle",

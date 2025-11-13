@@ -9,7 +9,8 @@ export default function PortfolioList(params) {
     const handleClick = (page) => {
         window.location.href = 'projects/'+ConvertNameToUrlSafe(page);
     }
-    const groupedItems = params.projects.reduce((result, value, index, array) => {
+    const listNoFeatured = params.projects.slice(2);
+    const groupedItems = listNoFeatured.reduce((result, value, index, array) => {
         if (index % 2 === 0) {
             result.push(array.slice(index, index + 2));
         }

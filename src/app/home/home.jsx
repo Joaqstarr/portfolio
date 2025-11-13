@@ -21,6 +21,8 @@ export default function Home({projects}) {
         };
     }, []);
 
+    const featuredProj1 = projects[0];
+    const featuredProj2 = projects[1];
 
     return (
 
@@ -38,7 +40,7 @@ export default function Home({projects}) {
                     }
                 }
             `}</style>
-            <TitleBar/>
+            <TitleBar featured1={featuredProj1} featured2={featuredProj2} />
             {/**/}
 
             <div className="bg-gradient-to-r from-gray-100 to-gray-200 bg-[length:200%_200%] animate-gradient">

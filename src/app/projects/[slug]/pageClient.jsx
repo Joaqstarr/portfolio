@@ -61,14 +61,23 @@ export default function PageClient(params){
 
         <div className="ease-in duration-200 md:w-2/3 m-auto max-w-4xl">
 
-
             <div className="flex flex-col-reverse lg:items-start items-center lg:flex-row gap-5">
 
                 <div>
                     <BackButton/>
-                    <div className="flex flex-row justify-between  w-full -left-1">
+
+
+                    <div className="flex flex-col md:flex-row justify-between  w-full -left-1">
                         <Header element={{content: project.name}}/>
-                        <SocialButtons github={project.github} itch={project.itch}/>
+                        <div className="flex md:flex-col flex-row">
+                            <div className="w-full md:mb-3">
+                                <h3 className="text-left md:text-right">Joaquin Royer</h3>
+                                <h3 className="text-left md:text-right"><i>Gameplay Programmer</i></h3>
+                            </div>
+                            <div className="self-end">
+                                <SocialButtons github={project.github} itch={project.itch}/>
+                            </div>
+                        </div>
                     </div>
                     <div
                         className="ease-in duration-200 m-auto backdrop-blur-lg p-6 shadow-2xl rounded-2xl border-gray-200 border border-double min-h-80">
