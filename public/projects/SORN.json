@@ -17,12 +17,12 @@
       "type": "details",
       "time": "August 2025 - May 2026",
       "teamSize": "7",
-      "engine": "Unreal Engine 5.6.1",
+      "engine": "Unreal Engine 5.6",
       "role": "Lead Programmer"
     },
     {
       "type": "paragraph",
-      "content": "SORN is a fast-paced mecha-action game developed in Unreal Engine 5.6."
+      "content": "SORN is a fast-paced mecha-action game developed in Unreal Engine 5.6. Most game code is in C++ with a blueprint layer over the top where necessary or useful."
     },
     {
       "type": "subtitle",
@@ -49,6 +49,26 @@
     {
       "type": "paragraph",
       "content": "Often conditions and actions require a reference to objects in the level. To create these references, gameplay tags are used. A component that can be attached to an actor registers the actor with a particular gameplay tag. Multiple actors can be registered with the same tag if desired. Conditions, actions, and any other gameplay code can than query these tags to bind to actors in the level. Pictured below are the configurable settings of the <i>\"Enter Radius\"</i> condition. As pictured, the condition activates when the player enters within 2500cm of the actor registered with the <i>\"Directives.Missions.TheWall.EnterWall\"</i> tag. The condition also has configurable text to control it's UI representation."
+    },
+    {
+      "type": "subtitle",
+      "content": "IK Animation"
+    },
+    {
+      "type": "paragraph",
+      "content": "When animating some robot characters, I implemented dynamic inverse kinematics to speed up of the pipeline and create animations that properly reacted to gameplay. For example, for the \"Hermit\" enemy, I move all 4 of their legs using IK. To help make the movement feel more believable, only non-adjacent legs can move at the same time. This IK code was all done in the animation blueprint. In the future I would like to multi-thread what I can from the IK calculations, however this may not be possible due to the traces required. It also may not be necessary for the scale of the game."
+    },
+    {
+      "type": "video",
+      "content": "/assets/sorn/Spiderwalk-1-1.webm"
+    },
+    {
+      "type": "paragraph",
+      "content": "As a leg steps it raises based on a curve. All of these evaluated curve values are then averaged for the torso movement."
+    },
+    {
+      "type": "video",
+      "content": "/assets/sorn/Spiderwalkik-1.webm"
     }
   ]
 }
