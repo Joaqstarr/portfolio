@@ -1,5 +1,5 @@
 ﻿export default function AboutMe(props) {
-    const resumeLink ="https://docs.google.com/document/d/1tFriWYby8soySQQZA-mVENlrieg_iO-XsoabbA5DqhM/edit?usp=sharing";
+    const resumeLink = "/Resume.pdf";//"https://docs.google.com/document/d/1tFriWYby8soySQQZA-mVENlrieg_iO-XsoabbA5DqhM/edit?usp=sharing";
     const emailLink ="mailto:joaquin@royerdesign.com";
     const githubLink ="https://github.com/Joaqstarr";
     const itchLink ="https://joaqstarr.itch.io/";

@@ -10,6 +10,10 @@
   "highlightColor": "#91847c",
   "elements": [
     {
+      "type": "video",
+      "content": "/assets/pinnacle/Pinnacle.webm"
+    },
+    {
       "type": "details",
       "time": "August 16, 2024 - August 20, 2024",
       "teamSize": "2",

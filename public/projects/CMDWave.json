@@ -11,12 +11,18 @@
 
   "elements": [
     {
+      "type": "image",
+      "content": "/assets/cmdwave/terminal.png",
+      "alt": "Screenshot depicting the terminal control panel game view."
+    },
+    {
       "type": "details",
       "time": "February 2023 - March 2023",
       "teamSize": "4",
       "engine": "Unity 2022",
       "role": "Lead Programmer"
     },
+
     {
       "type": "paragraph",
       "content": "Created in 1 month for the Metroidvania Month 23 Game Jam with a 4 person team. I was the lead programmer and artist/tech artist."

@@ -1,5 +1,5 @@
 ﻿{
-  "order": "0",
+  "order": "1",
   "name": "Redline",
   "tags": ["Unity", "C#", "Android", "BLE", "Input System"],
   "extraInfo": "Lead Programmer, Limbitless Solutions",
@@ -7,6 +7,10 @@
   "backgroundColor": "#452c49",
   "highlightColor": "#b82e0f",
   "elements": [
+    {
+      "type": "video",
+      "content": "/assets/redline/3PlayerGameplay.webm"
+    },
     {
       "type": "details",
       "time": "August 2023 - May 2026",
@@ -38,27 +42,16 @@
     },
     {
       "type":"subtitle",
-      "content": "Local Multiplayer"
-    },
-    {
-      "type": "paragraph",
-      "content": "Redline was my first project at Limbitless Solutions. It began as a fully singleplayer experience, controlled with touchscreen and a custom muscle reading electromyographic flex controller. We felt it needed more to be considered for alt.ctrl, so we decided to pivot the game into a 4 player local VS game in under 2 weeks to meet the submission deadline. Expanding the player count itself, while intrusive, was not too difficult. Player code was very contained, leveraging Unity's Input System. I had challenges deciding how player controller assigning would work, as unlike most games, this game can be controlled by 2 distinct bluetooth controllers in a pair. The gameplay also had to be completely rethought for multiplayer, adding in player collisions, a truck system, and other features to create a dynamic re-playable game."
-    },
-    {
-      "type": "video",
-      "content": "/assets/redline/3PlayerGameplay.webm"
-    },
-    {
-      "type": "paragraph",
-      "content": "This game's ultimate goal was training, so making it re-playable was essential in encouraging patients to actively work out their muscles. Multiplayer gameplay adds a unique competitive twist that can keep gameplay fresh by adding a social aspect. Another essential aspect is minimizing downtime. In Redline, if you are knocked out early, you can still participate in the game, taking control of a reticle, and flexing to launch trucks at the remaining players. This means you are always building strength, and participating in the fun, even if you are having a bad game."
-    },
-    {
-      "type": "video",
-      "content": "/assets/redline/trucks.webm"
-    },
-    {
-      "type":"subtitle",
       "content": "Custom Flex Controller"
+    },
+    {
+      "type": "paragraph",
+      "content": "Redline is designed to build muscle strength for children with limb difference. It is played with a custom flex reading controller pictured below. The flex controller sends data to the game over a Bluetooth Low Energy signal. Because everyone's muscles and skin conditions are unique, the controller requires a calibration process for optimal results. When preparing for GDC, I was worried about the lengthy calibration process in the conference setting. I created an EMG auto-calibrator that works by reading your peaks and valleys, and then setting threshold values based off the read data. This system has since been ported to all other Limbitless games."
+    },
+    {
+      "type": "image",
+      "content": "/assets/redline/flexController.png",
+      "alt": "Photo of custom flex reading EMG controller on strapped to left arm, with supplementary gamepad in right hand."
     },
     {
       "type": "paragraph",
@@ -67,6 +60,22 @@
     {
       "type": "video",
       "content": "/assets/redline/InputSystem.webm"
+    },
+    {
+      "type":"subtitle",
+      "content": "Local Multiplayer"
+    },
+    {
+      "type": "paragraph",
+      "content": "Redline was my first project at Limbitless Solutions. It began as a fully singleplayer experience, controlled with touchscreen and a custom muscle reading electromyographic flex controller. We felt it needed more to be considered for alt.ctrl, so we decided to pivot the game into a 4 player local VS game in under 2 weeks to meet the submission deadline. Expanding the player count itself, while intrusive, was not too difficult. Player code was very contained, leveraging Unity's Input System. I had challenges deciding how player controller assigning would work, as unlike most games, this game can be controlled by 2 distinct bluetooth controllers in a pair. The gameplay also had to be completely rethought for multiplayer, adding in player collisions, a truck system, and other features to create a dynamic re-playable game."
+    },
+    {
+      "type": "paragraph",
+      "content": "This game's ultimate goal was training, so making it re-playable was essential in encouraging patients to actively work out their muscles. Multiplayer gameplay adds a unique competitive twist that can keep gameplay fresh by adding a social aspect. Another essential aspect is minimizing downtime. In Redline, if you are knocked out early, you can still participate in the game, taking control of a reticle, and flexing to launch trucks at the remaining players. This means you are always building strength, and participating in the fun, even if you are having a bad game."
+    },
+    {
+      "type": "video",
+      "content": "/assets/redline/trucks.webm"
     },
     {
       "type":"subtitle",
