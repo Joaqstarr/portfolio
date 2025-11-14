@@ -30,7 +30,7 @@
     },
     {
       "type": "paragraph",
-      "content": "In SORN, the player primarily progresses through the game by completing mission content. To facilitate the development of missions, I created a mission system, leveraging Unreal's Editor Graph Tools. Missions are made up primarily of objective chains, objectives, conditions and actions."
+      "content": "In SORN, the player primarily progresses through the game by completing mission content. To facilitate the development of missions, I created a mission editor system, leveraging Unreal's Editor Graph Tools. Missions are made up primarily of objective chains, objectives, conditions and actions."
     },
     {
       "type": "image",
