@@ -8,7 +8,7 @@
   "thumbnail": "assets/silentCity/banner.png",
   "backgroundColor": "#d25d85",
   "highlightColor": "#1f1440",
-  "hidden": "false",
+  "hidden": "true",
   "elements": [
     {
       "type": "paragraph",

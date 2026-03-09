@@ -6,6 +6,7 @@ import Video from "./Video";
 import ProjectTime from "./ProjectTime";
 import Code from "./Code";
 import ProjectDetails from "./ProjectDetails";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 export default function Element(params){
     switch (params.element.type){
@@ -25,6 +26,7 @@ export default function Element(params){
             return(<Code element={params.element}/>);
         case "details":
             return (<ProjectDetails element={params.element}/>);
-
+        case "YoutubeEmbed":
+            return (<YoutubeEmbed element={params.element}/>);
     }
 }

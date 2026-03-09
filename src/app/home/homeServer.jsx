@@ -50,7 +50,7 @@ export async function  fetchProjects () {
             return res.json();
         })
     );
-    const filteredFiles = filesReceived.filter((a)=> !a.hidden);
+    const filteredFiles = filesReceived.filter((a)=> a.hidden != false);
 
     return filteredFiles.sort((a, b) => a.order - b.order);
 }

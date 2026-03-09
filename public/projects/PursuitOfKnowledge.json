@@ -1,0 +1,141 @@
+﻿{
+  "order": "1.1",
+  "name": "Pursuit of Knowledge",
+  "tags": ["Unity", "C#", "Shader Graph"],
+  "extraInfo": "Lead programmer. 3d Platformer created in 2 months.",
+  "itch": "https://chicheetah.itch.io/pursuit-of-knowledge",
+  "github": "https://github.com/Joaqstarr/Pursuit-of-Knowledge",
+  "thumbnail": "assets/PursuitOfKnowledge/Cover.png",
+  "backgroundColor": "#995600",
+  "highlightColor": "#995600",
+
+  "elements": [
+    {
+      "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/0lwPh1WuTLE?si=KJC7SzNRHtlej3yt"
+    },
+    {
+      "type": "details",
+      "time": "March 2024 - April 2024",
+      "teamSize": "7",
+      "engine": "Unity 2022",
+      "role": "Lead Programmer"
+    },
+
+    {
+      "type": "paragraph",
+      "content": "Created in 2 month for the Game Production class at UCF. I was the lead programmer and tech artist."
+    },
+    {
+      "type": "paragraph",
+      "content": "Pursuit of Knowledge is a platformer where you play as a a puff of steam exploring a magical library. In the game you interface with objects by inhaling and exhaling steam, a resource that can power machines, open doors, and more."
+    },
+    {
+      "type": "subtitle",
+      "content": "Steam Resource"
+    },
+    {
+      "type": "paragraph",
+      "content": "All steam is held in a steam resource holder. Steam can be moved from 1 holder to another through \"Transfers.\" The steam resource holder is designed for rapid designer iteration. It exposes properties that can be used to quickly create new variants of existing objects, or to tune game balance and steam economy."
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/SteamResourceHolder.png",
+      "alt": "Image of the steam resource holder component."
+    },
+    {
+      "type": "paragraph",
+      "content": "Steam transfers can be instantaneous(useful for on tick transfers as well), or take a set duration. A steam resource holder can maintain multiple duration transfers at once."
+    },
+    {
+      "type": "code",
+      "content": " private class SteamTransferContext\n {\n     private SteamResourceHolder _giver;\n     private SteamResourceHolder _receiver;\n\n     private float _totalAmount;\n     private float _amountLeft;\n     private float _totalTime;\n     private float _timeLeft;\n     \n     public SteamTransferContext(SteamResourceHolder giver, SteamResourceHolder receiver, float amount, float time)\n     {\n         _giver = giver;\n         _receiver = receiver;\n         _totalAmount = amount;\n         _amountLeft = amount;\n         _totalTime = time;\n         _timeLeft = time;\n     }\n\n     public void ExecuteTransferFrame(float deltaTime)\n     {\n         float amountToTransfer = _totalAmount * (deltaTime / _totalTime);\n         \n         if(amountToTransfer > _giver.SteamAmount)\n         {\n             //if giver runs out, mark this transfer for early completion\n             _amountLeft = 0;\n             _timeLeft = 0;\n         }\n         \n         _giver.RemoveSteam(amountToTransfer);\n         _receiver.AddSteam(amountToTransfer);\n         _amountLeft -= amountToTransfer;\n         _timeLeft -= deltaTime;\n     }\n     \n     public bool IsComplete()\n     {\n         return _amountLeft <= 0 || _timeLeft <= 0;\n     }\n     \n }",
+      "language": "C#"
+    },
+    {
+      "type": "subtitle",
+      "content": "Level Streaming"
+    },
+    {
+      "type": "paragraph",
+      "content": "To create a seamless platforming experience, each level in Pursuit of Knowledge is seperated by a special doorway. When the player decided to open the door, the next level is asynchronously loaded in the background as the door opens. Level streaming is optimized to prevent hitches."
+    },
+    {
+    "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/_u-6mxnCFoM?si=h8hjfEbiN66mFAJh"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unfortunately, asynchronous loading in editor is slower due to the need to deserialize prefabs at runtime, so here is a clip in a packaged build."
+    },
+    {
+      "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/UQydXdbzH0w?si=ojStZ1-rjqOpVHyY"
+    },
+    {
+      "type": "subtitle",
+      "content": "Cloud Shader"
+    },
+    {
+      "type": "paragraph",
+      "content": "In pursuit of knowledge, you play as a puff of steam that slowly takes the form of a girl. To bring the character to life I used shadergraph. The meat of the shader is a scrolling perlin noise vertex animation that gives the impression of a wavering cloud."
+    },
+    {
+      "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/32di6Spo9Hw?si=Xu7dfU-FHW9zZbId"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you get near an \"Attraction point\" the player's model itself appears to get pulled into it, indicating you are within range and are able to interact with the object. For example, these fans around the map launch the player. When being attracted, a strength value is determined for each vertex, that way only the part of the model closest to the attraction point is actually pulled in. To approximate which vertexes to attract, I use the dot product of the surface normal and the direction of the attraction point. The normal describes the direction perpendicular to the surface at that vertex."
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/AttractionPointDiagram.png",
+      "alt": "Drawing describing the math used to calculate vertex attraction strength."
+    },
+    {
+      "type": "paragraph",
+      "content": "The dot product calculates the similarity of the 2 directions. If they are not similar at all(pictured at point 1), I do not apply any attraction force to the vertexes. If they are completely similar, I apply the full attraction force to the vertex(pictured at point 2)."
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/AttractionPointDiagram2.png",
+      "alt": "Drawing describing the math used to calculate vertex attraction strength."
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/AttractionPoint.png",
+      "alt": "Image of the attraction point nodes."
+    },
+    {
+      "type": "paragraph",
+      "content": "I also filter attraction force based on the height of the vertex in object space, to keep the feet grounded. For more control of attraction in future projects, I would instead opt for a texture that determines the amount of attraction allowed at each point."
+    },
+    {
+      "type": "subtitle",
+      "content": "Pipe Shader"
+    },
+    {
+      "type": "paragraph",
+      "content": "The player is able to enter and travel through pipes. To allow the player to visualize their position inside the pipe I use a shader that displaces a point in the pipe. The final effect is a lump that slides through the pipe."
+    },
+    {
+      "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/_AGjMxf7niI?si=XdtB0rC8m6GKBITW"
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/PipeLumpDiagram.png",
+      "alt": "Diagram describing math required to create the pipe lump"
+    },
+    {
+      "type": "paragraph",
+      "content": "The pipe shader checks the distance of each vertex and a lump position. If close enough, it then calculates a strength based on the distance, and offsets the vertex along its normal using the calculated strength and a lump size parameter."
+    },
+    {
+      "type": "image",
+      "content": "/assets/PursuitOfKnowledge/PipeLumpNodes.png",
+      "alt": "Nodes to create the pipe lump"
+    }
+  ]
+}
