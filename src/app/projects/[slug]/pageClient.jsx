@@ -68,7 +68,7 @@ export default function PageClient(params){
 
 
                     <div className="flex flex-col md:flex-row justify-between  w-full -left-1">
-                        <Header element={{content: project.name}}/>
+                        <Header element={{content: project?.name}}/>
                         <div className="flex md:flex-col flex-row">
                             <div className="w-full md:mb-3">
                                 <h3 className="text-left md:text-right">Joaquin Royer</h3>

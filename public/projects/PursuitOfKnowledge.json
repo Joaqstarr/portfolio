@@ -1,7 +1,7 @@
 ﻿{
   "order": "1.1",
-  "name": "Pursuit of Knowledge",
-  "tags": ["Unity", "C#", "Shader Graph"],
+    "name": "Pursuit of Knowledge",
+    "tags": ["Unity", "C#", "Shader Graph"],
   "extraInfo": "Lead programmer. 3d Platformer created in 2 months.",
   "itch": "https://chicheetah.itch.io/pursuit-of-knowledge",
   "github": "https://github.com/Joaqstarr/Pursuit-of-Knowledge",
