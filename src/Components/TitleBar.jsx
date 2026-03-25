@@ -16,7 +16,7 @@ function TitleBar(params){
                 <div className="flex-grow flex flex-col items-center justify-center">
                     <h1 className="text-8xl text-blue-100 mb-6 md:mb-3 text-center font-bold text-shadow-lg">Joaquin
                         Royer</h1>
-                    <h2 className="text-4xl text-blue-100 text-center text-shadow-lg">Gameplay Programmer</h2>
+                    <h2 className="text-4xl text-blue-100 text-center text-shadow-lg">Systems Engineer</h2>
                 </div>
 
                 <div className="mb-8">
