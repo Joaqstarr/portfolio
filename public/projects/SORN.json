@@ -65,6 +65,11 @@
       "alt": "Image of the control rig editor for the proxy armature."
     },
     {
+      "type": "image",
+      "content": "/assets/sorn/mechSequencer.png",
+      "alt": "Image of the control rig in action in sequencer"
+    },
+    {
       "type": "subtitle",
       "content": "Melee Ability"
     },
@@ -153,6 +158,29 @@
     {
       "type": "video",
       "content": "/assets/sorn/Spiderwalkik-1.webm"
+    },
+    {
+      "type": "subtitle",
+      "content": "Control Rigs"
+    },
+    {
+      "type": "paragraph",
+      "content": "I built control rigs for varius mech parts and characters in SORN using FK, IK and proxy controls."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/BiobotCR.png",
+      "alt": "Screenshot depicting the Biobot Control Rig Controls"
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/WhaleCR.png",
+      "alt": "Screenshot depicting the Whale Control Rig Controls"
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/QuadLegsCR.png",
+      "alt": "Screenshot depicting the Quad legs Control Rig Controls"
     }
   ]
 }
