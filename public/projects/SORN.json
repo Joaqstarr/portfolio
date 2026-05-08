@@ -109,7 +109,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Too allow for the dynamic camera motion during abilities like melee, the priority based camera state machine is used. This allows for individual camera states to be defined with a priority, and then evaluated based on the character's owned gameplay tags. The highest priority camera tag will be selected using a max heap. When state tags are added to the pawn, the state gets added to the heap, and they are removed when the tag is removed. This is done using tag added/removed events to prevent unnecessary checks on tick. With this camera state machine, the melee camera was able to be implemented simply by adding the state's associated gameplay tag to the \"Ability Owned Tags\" section. Below is a code snippet of a camera state definition."
+      "content": "To allow for the dynamic camera motion during abilities like melee, the priority based camera state machine is used. This allows for individual camera states to be defined with a priority, and then evaluated based on the character's owned gameplay tags. The highest priority camera tag will be selected using a max heap. When state tags are added to the pawn, the state gets added to the heap, and they are removed when the tag is removed. This is done using tag added/removed events to prevent unnecessary checks on tick. With this camera state machine, the melee camera was able to be implemented simply by adding the state's associated gameplay tag to the \"Ability Owned Tags\" section. Below is a code snippet of a camera state definition."
     },
     {
       "type": "code",
