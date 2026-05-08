@@ -70,6 +70,10 @@
       "alt": "Image of the control rig in action in sequencer"
     },
     {
+      "type": "video",
+      "content": "/assets/sorn/Mechcontrolrig-1.webm"
+    },
+    {
       "type": "subtitle",
       "content": "Melee Ability"
     },
@@ -141,6 +145,32 @@
     },
     {
       "type": "subtitle",
+      "content": "State Trees"
+    },
+    {
+      "type": "paragraph",
+      "content": "Many of the enemies and bosses are driven using Unreal Engine State Trees. The mech fight state tree is used for the first boss fight, and the first phase of the second boss fight."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/mechAIStateTree.png",
+      "alt": "Screenshot depicting the mech fight state tree."
+    },
+    {
+      "type": "paragraph",
+      "content": "After completing the first phase of Boss 2, it transitions into a circular chase sequence inspired by Goht from Majora's Mask. It constantly runs on a circular track forcing the player to keep up. The mech code shares a base class with the other mechs in the game, with the majority of the differences being in the controller. As it runs around the track, it jumps in-between different lanes represented as splines. Because of this, the tracks can be any shape."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/Boss2StateTree.png",
+      "alt": "Screenshot depicting the boss 2 mech fight state tree."
+    },
+    {
+      "type": "video",
+      "content": "/assets/sorn/Boss2.webm"
+    },
+    {
+      "type": "subtitle",
       "content": "IK Animation"
     },
     {
@@ -165,7 +195,7 @@
     },
     {
       "type": "paragraph",
-      "content": "I built control rigs for varius mech parts and characters in SORN using FK, IK and proxy controls."
+      "content": "I built control rigs for various mech parts and characters in SORN using FK, IK and proxy controls."
     },
     {
       "type": "image",
