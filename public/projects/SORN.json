@@ -3,6 +3,7 @@
   "name": "SORN",
   "tags": ["Unreal Engine 5", "C++", "GAS", "BP"],
   "extraInfo": "Lead Programmer",
+  "steam": "https://store.steampowered.com/app/4606740/SORN/",
   "github": "https://github.com/Joaqstarr/SORN",
   "thumbnail": "assets/sorn/banner.png",
   "backgroundColor": "#5e3f19",
@@ -10,19 +11,102 @@
 
   "elements": [
     {
-      "type": "video",
-      "content": "/assets/sorn/Sorngameplay-1.webm"
+      "type": "YoutubeEmbed",
+      "content": "https://www.youtube.com/embed/liebrezTzXM?si=RDtOGFb4ADnWwUFV"
     },
     {
       "type": "details",
       "time": "August 2025 - May 2026",
-      "teamSize": "7",
+      "teamSize": "15",
       "engine": "Unreal Engine 5.6",
       "role": "Lead Programmer"
     },
     {
       "type": "paragraph",
-      "content": "SORN is a fast-paced mecha-action game developed in Unreal Engine 5.6. Most game code is in C++ with a blueprint layer over the top where necessary or useful."
+      "content": "SORN is a fast-paced mecha-action game developed in Unreal Engine 5.6. It is written in C++ and Blueprints. The team consisted of 4 programmers, 3 artists, 1 vfx artist, 3 level designers, 2 UI designers, 1 narrative designer, and 1 sound designer."
+    },
+    {
+      "type": "subtitle",
+      "content": "Mech Character"
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/PlayerMechCharacter.png",
+      "alt": "Image of BP_PlayerMechCharacter and it's components."
+    },
+    {
+      "type": "paragraph",
+      "content": "The mech character is a subclass of Unreal's character class with additional functionality to support swappable parts, synced animations, and the custom movement states. I made a system that allows Character Movement Component stats to be driven by gameplay attributes, which allows the customization system to interface with many movement related stats."
+    },
+    {
+      "type": "subtitle",
+      "content": "Synced Animation System"
+    },
+    {
+      "type": "paragraph",
+      "content": "To support character customization without limiting skeletons, each piece(legs, torso, left arm, right arm) is it's own skeletal mesh. This presented challenges when attempting to sync animations across all the pieces. To solve this, I created 2 solutions. One for one-shot animations, and the other for cutscene authoring."
+    },
+    {
+      "type": "paragraph",
+      "content": "The tagged animation system associates animation montages with tags. Mech parts can \"opt in\" to listening for a particular animation. Instead of playing an animation montage on the character mesh, you make a request to play a particular animation tag. Any parts listening for that tag will then play their animation. This is authored using a data asset. This data asset contains all the info required to equip a mech part."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/MechPartDataAsset.png",
+      "alt": "Image of the mech part data asset and tagged animation system."
+    },
+    {
+      "type": "paragraph",
+      "content": "The proxy animation system allows the use of 1 control rig accross all mech parts. This is done using an empty proxy armature that is driven by an Unreal Control Rig. Values from this armature are then gathered at runtime and fed into the animation blueprints of the mech parts individually. This allows cutscene animators to be able to animate the mech without knowing what actual parts are equipped. The proxy armature's bones consist of values like velocity, head aim location, left arm target location, etc."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/ProxyCR.png",
+      "alt": "Image of the control rig editor for the proxy armature."
+    },
+    {
+      "type": "subtitle",
+      "content": "Melee Ability"
+    },
+    {
+      "type": "paragraph",
+      "content": "All player abilities (firing, jumping, reloading, repairing, meleeing, etc) are built using the Gameplay Ability System. One ability I am especially proud of is the melee. The melee uses many of the systems built for mech characters, including the camera manager and the synced animation system."
+    },
+    {
+      "type": "paragraph",
+      "content": "When activated the melee finds a target. It does so first by checking if the player has a target locked, if not, it uses a nearby suitable target. If there are no targets nearby, it uses camera direction and a set distance. The melee animation is then played, and the target snapping behavior is then handled using root motion and motion warping. This gives designers easy control over snapping curves and windows using the Animation Montage Editor."
+    },
+    {
+      "type": "video",
+      "content": "/assets/sorn/Meleecamera.webm"
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/meleeMontage.png",
+      "alt": "Image of the animation montage editor for the quad legs. The motion warping notify state is currently selected."
+    },
+    {
+      "type": "paragraph",
+      "content": "Melee hitboxes are implemented using a custom animation notify state. The custom animation notify state allows designers to attach capsule colliders to start and end sockets. It also handle's accounting for duplicating hits. Below is an image of what the authoring process for that looks like. Building this animation state ended up saving lots of time later due to a last minute final boss pivot, allowing some of its attacks to be created incredibly quickly by reusing this system."
+    },
+    {
+      "type": "image",
+      "content": "/assets/sorn/meleeTrace.png",
+      "alt": "Image of the animation montage editor for the left arm of a mech. The melee trace notify state is selected and debug tracing is enabled."
+    },
+    {
+      "type": "subtitle",
+      "content": "Third Person Camera State Machine"
+    },
+    {
+      "type": "paragraph",
+      "content": "Too allow for the dynamic camera motion during abilities like melee, the priority based camera state machine is used. This allows for individual camera states to be defined with a priority, and then evaluated based on the character's owned gameplay tags. The highest priority camera tag will be selected using a max heap. When state tags are added to the pawn, the state gets added to the heap, and they are removed when the tag is removed. This is done using tag added/removed events to prevent unnecessary checks on tick. With this camera state machine, the melee camera was able to be implemented simply by adding the state's associated gameplay tag to the \"Ability Owned Tags\" section. Below is a code snippet of a camera state definition."
+    },
+    {
+      "type": "code",
+      "content": "USTRUCT(BlueprintType)\nstruct FCameraState {\n\tGENERATED_BODY()\n\tUPROPERTY(EditAnywhere)\n\tint Priority = 0;\n\n\t//spring arm length\n\tUPROPERTY(EditAnywhere)\n\tfloat TargetArmLength = 1400.f;\n\t//spring arm socket offset\n\tUPROPERTY(EditAnywhere)\n\tFVector SocketOffset = FVector::ZeroVector;\n\t//spring arm target offset\n\tUPROPERTY(EditAnywhere)\n\tFVector TargetOffset = FVector::ZeroVector;\n\t\n\t//Decides whether fov gets overriden\n\tUPROPERTY(EditAnywhere)\n\tbool bOverrideFOV = false;\n\t//The overriden fov\n\tUPROPERTY(EditAnywhere, meta=(EditCondition=\"bOverrideFOV\"))\n\tfloat FieldOfView = 90.f;\n\t\n\t//Decides whether control rotation gets overriden\n\tUPROPERTY(EditAnywhere)\n\tbool bOverrideControlRotation = false;\n\t//The overriden control rotation. In local space, relative to the pawn's rotation\n\tUPROPERTY(EditAnywhere, meta=(EditCondition=\"bOverrideControlRotation\"))\n\tFRotator ControlRotation = FRotator::ZeroRotator;\n\t\n\tUPROPERTY(EditAnywhere)\n\tfloat InterpSpeed = 5.f;\n};",
+
+      "language": "C++"
     },
     {
       "type": "subtitle",

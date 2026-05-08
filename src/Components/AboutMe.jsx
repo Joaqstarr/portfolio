@@ -19,7 +19,7 @@
                             development club at UCF, where I educate and help people get started in Game
                             Development. My favorite game series is The Legend of Zelda, but I play pretty much any genre
                             in my free time.</Paragraph>
-                        <div className="flex flex-row mt-6 border-t-2 border-blue-100 border-dashed pt-4 gap-5" newTab={true}>
+                        <div className="flex flex-row mt-6 border-t-2 border-blue-100 border-dashed pt-4 gap-5">
                             <IconButton link={githubLink} icon="fa-brands fa-github" text="Github" newTab={true}/>
                             <IconButton link={itchLink} icon="fa-brands fa-itch-io" text="Itch" newTab={true}/>
                             <IconButton link={resumeLink} icon="fa-file" text="Resume" newTab={true}/>

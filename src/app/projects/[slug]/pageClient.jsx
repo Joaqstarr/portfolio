@@ -75,7 +75,7 @@ export default function PageClient(params){
                                 <h3 className="text-left md:text-right"><i>Gameplay Programmer</i></h3>
                             </div>
                             <div className="self-end">
-                                <SocialButtons github={project.github} itch={project.itch}/>
+                                <SocialButtons github={project.github} itch={project.itch} steam={project.steam}/>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,6 @@ function TableOfContentsPane({headers}){
                 <div className={`transition-opacity duration-75 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
                      ref={containerRef}>
                     <TableOfContents headingData={headers} enabled={isOpen}/>
-
                 </div>
             </div>
             <button onClick={handleOnClick} className="mb-2 relative w-full lg:opacity-0 lg:h-0 lg:pointer-events-none">
@@ -178,11 +177,12 @@ function TableOfContentsPane({headers}){
     )
 }
 
-function SocialButtons({github, itch}) {
+function SocialButtons({github, itch, steam}) {
     return (
         <div className="flex flex-row items-end pb-2 gap-2">
             {github && <SocialButton link={github} icon="fa-github"/>}
             {itch && <SocialButton link={itch} icon="fa-itch-io"/>}
+            {steam && <SocialButton link={steam} icon="fa-steam"/>}
         </div>
 
     )
